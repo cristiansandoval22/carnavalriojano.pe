@@ -1,0 +1,48 @@
+---
+import { getCollection } from "astro:content";
+import "./hotelCarousel.css";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import HotelCard from "../HotelCard/HotelCard.astro";
+
+const hospedajes = await getCollection("hospedajes");
+---
+
+<!-- Slider main container -->
+<!-- Swiper -->
+<div class="wrapper__slide">
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            {
+                hospedajes.map((hospedaje) => {
+                    const { slug, data } = hospedaje;
+                    const { title, direccion, imagen } = data;
+
+                    return (
+                        <div class="swiper-slide">
+                            <HotelCard 
+                            title={title}
+                            direccion={direccion}
+                            imagen={imagen}
+                            slug={slug}
+                             />
+                        </div>
+                    );
+                })
+            }
+        </div>
+
+        <!-- If we need navigation buttons -->
+        <!-- <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div> -->
+
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+    </div>
+</div>
+
+<script src="./hotelCarousel.js"></script>

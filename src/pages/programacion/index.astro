@@ -1,0 +1,40 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import GoBack from "../../components/goBack/goBack.astro";
+import DayScheduleCard from "../../components/programacion/DayScheduleCard/DayScheduleCard.astro";
+
+import { getCollection } from "astro:content";
+
+const programacion = await getCollection("programacion");
+---
+
+<Layout title="Programación del Carnaval Riojano 2025">
+    <section class="section container">
+        <div class="content">
+
+            <nav >
+                <GoBack text="Volver a inicio" link="/" />
+            </nav>
+            <div class="grid__days">
+               {
+                programacion
+                    .sort((a, b) => a.data.id - b.data.id) // 👈 orden manual
+                    .map((day) => {
+                        const { slug, data } = day;
+                        const { title, activities, date } = data;
+
+                        return (
+                            <div class="swiper-slide">
+                                <DayScheduleCard
+                                    day={title}
+                                    activities={activities}
+                                    slug={slug}
+                                />
+                            </div>
+                        );
+                    })
+            }
+            </div>
+        </div>
+    </section>
+</Layout>

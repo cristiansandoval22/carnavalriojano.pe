@@ -1,0 +1,49 @@
+---
+import { getCollection } from "astro:content";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "./ScheduleCarousel.css";
+
+import DayScheduleCard from "../DayScheduleCard/DayScheduleCard.astro";
+
+const programacion = await getCollection("programacion");
+---
+
+<!-- Slider main container --><!-- Swiper -->
+<div class="wrapper__slide">
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            {
+                programacion
+                    .sort((a, b) => a.data.id - b.data.id) // 👈 orden manual
+                    .map((day) => {
+                        const { slug, data } = day;
+                        const { title, activities, date } = data;
+
+                        return (
+                            <div class="swiper-slide">
+                                <DayScheduleCard
+                                    day={title}
+                                    activities={activities}
+                                    slug={slug}
+                                />
+                            </div>
+                        );
+                    })
+            }
+        </div>
+
+        <!-- If we need navigation buttons -->
+        <!-- <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div> -->
+
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+    </div>
+</div>
+
+<script src="./ScheduleCarousel.js"></script>

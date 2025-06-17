@@ -1,0 +1,34 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import GoBack from "../../components/goBack/goBack.astro";
+import ReinaCard from "../../components/reinas/reina-card/ReinaCard.astro";
+import { getCollection } from "astro:content";
+
+const reinas = await getCollection("reinas");
+---
+
+<Layout title="Programación del Carnaval Riojano 2025">
+    <section class="section container">
+        <div class="content">
+            <div class="grid__reinas">
+                {
+                    reinas.map((reina) => {
+                        const { slug, data } = reina;
+                        const { title, imagenPrincipal, barrio, edad, profesion } = data;
+
+                        return (
+                            <ReinaCard
+                                reinaImg={imagenPrincipal}
+                                reinaName={title}
+                                reinaBarrio={barrio}
+                                reinaEdad={edad}
+                                reinaProfesion={profesion}
+                                slug={slug}
+                                />
+                        );  
+                    }) 
+                }
+            </div>
+        </div>
+    </section>
+</Layout>

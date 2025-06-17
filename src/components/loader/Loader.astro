@@ -1,0 +1,101 @@
+<div class="loader__container" id="page-loader">
+  <div class="loader"></div>
+</div>
+
+<style>
+  #page-loader {
+  transition: opacity 0.5s ease;
+}
+
+  .loader__container {
+    position: fixed;
+    inset: 0;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  /* From Uiverse.io by Pradeepsaranbishnoi */
+  .loader {
+    --s: 5px;
+    /* control the size */
+    width: calc(10 * var(--s));
+    display: grid;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    -webkit-mask: radial-gradient(
+      50% 50%,
+      #0000 calc(99% - 2 * var(--s)),
+      #000 calc(101% - 2 * var(--s))
+    );
+    animation: r 2s linear infinite;
+    opacity: 1;
+  }
+
+  .loader:before {
+    content: "";
+    /* adjust the colors below */
+    background: conic-gradient(
+      from 25deg,
+      #f8a201 25%,
+      #fa2402 0 50%,
+      #fdb3b0 0 75%,
+      #02dde1 0
+    );
+    -webkit-mask:
+      repeating-conic-gradient(#0000 0 25deg, #000 23% 25%),
+      radial-gradient(var(--s) at var(--s) 50%, #000 97%, #0000)
+        left/calc(100% - 2 * var(--s)) 100% repeat-x,
+      radial-gradient(var(--s) at 50% var(--s), #000 97%, #0000) top / 100%
+        calc(100% - 2 * var(--s)) repeat-y;
+  }
+
+  @keyframes r {
+    to {
+      transform: rotate(1turn);
+    }
+  }
+</style>
+
+<script>
+  window.addEventListener("load", () => {
+    const loader = document.getElementById("page-loader");
+    if (loader) {
+      loader.style.transition = "opacity 0.5s ease";
+      loader.style.opacity = "0";
+
+      setTimeout(() => {
+        loader.style.display = "none";
+      }, 500); // 500ms es suficiente
+    }
+  });
+
+  document.addEventListener("click", (e: MouseEvent) => {
+  const target = e.target as HTMLElement;
+  const anchor = target.closest("a") as HTMLAnchorElement | null;
+
+  if (
+    anchor &&
+    anchor.href &&
+    anchor.target !== "_blank" &&
+    anchor.origin === window.location.origin
+  ) {
+    e.preventDefault();
+
+    const loader = document.getElementById("page-loader");
+
+    if (loader) {
+      // Asegura que el loader esté visible
+      loader.style.display = "flex";
+      // Forzar reflow para asegurar transición
+      void loader.offsetWidth;
+      loader.style.opacity = "1";
+    }
+
+    setTimeout(() => {
+      window.location.href = anchor.href;
+    }, 1000); // 1 segundo de transición
+  }
+});
+</script>

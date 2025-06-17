@@ -1,0 +1,38 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import GoBack from "../../components/goBack/goBack.astro";
+
+import { getCollection } from "astro:content";
+
+const hospedajes = await getCollection("hospedajes");
+---
+
+<Layout title="Hospedajes del Carnaval Riojano 2025">
+    <section class="section container">
+        <div class="content">
+            <nav>
+                <GoBack text="Volver a inicio" link="/" />
+            </nav>
+
+            {
+                hospedajes.map((hospedaje) => {
+                    const { slug, data } = hospedaje;
+                    const { title, descripcion, direccion, telefono, imagen } =
+                        data;
+
+                    return (
+                        <div style="background-color: aqua;">
+                            <a href={`/hospedajes/${slug}`}>
+                                
+                                <h3>{title}</h3>
+                                <p>{descripcion}</p>
+                                <p>{telefono}</p>
+                                <p>{direccion}</p>
+                            </a>
+                        </div>
+                    );
+                })
+            }
+        </div>
+    </section>
+</Layout>

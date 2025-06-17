@@ -1,0 +1,35 @@
+---
+import "./Reina-card.css";
+
+interface Props {
+    reinaImg: string;
+    reinaName: string;
+    reinaBarrio: string;
+    reinaEdad: number;
+    reinaProfesion: string;
+    slug: string;
+}
+
+const { reinaImg, reinaName, reinaBarrio, reinaEdad, reinaProfesion, slug } =
+    Astro.props;
+
+---
+
+<a class="reina__card__link" href={`/reinas/${slug}`}>
+    <article class="reina__card">
+        <figure class="reina__card__image">
+            <img
+                src={`/reinas/${reinaImg}`}
+                alt= {`Candidata del ${reinaBarrio} - ${reinaName}`}
+            />
+        </figure>
+
+        <div class="reina__card__content">
+            <h3 class="reina__card__name">{reinaName}</h3>
+            <p class="reina__card__barrio">{reinaBarrio}</p>
+            <p class="reina__card__Profesion">
+                {`${reinaEdad} años • ${reinaProfesion}`}
+            </p>
+        </div>
+    </article>
+</a>

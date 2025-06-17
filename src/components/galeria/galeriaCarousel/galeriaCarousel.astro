@@ -1,0 +1,32 @@
+---
+// GallerySlider.astro
+import "./galeriaCarousel.css";
+---
+
+<div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <img src="https://swiperjs.com/demos/images/nature-1.jpg" alt="Nature 1" />
+    </div>
+    <div class="swiper-slide">
+      <img src="https://swiperjs.com/demos/images/nature-2.jpg" alt="Nature 2" />
+    </div>
+    <!-- Más slides según necesidad -->
+  </div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</div>
+
+<div data-thumbslider  class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <img src="https://swiperjs.com/demos/images/nature-1.jpg" alt="Mini Nature 1" />
+    </div>
+    <div class="swiper-slide">
+      <img src="https://swiperjs.com/demos/images/nature-2.jpg" alt="Mini Nature 2" />
+    </div>
+    <!-- Más thumbnails según necesidad -->
+  </div>
+</div>
+
+<script src="./galeriaCarousel.js"></script>

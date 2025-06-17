@@ -1,0 +1,63 @@
+---
+import "./Header.css"
+import ButonHeader from "../buton_header/butonHeader.astro";
+---
+
+
+
+<!--==================== HEADER ====================-->
+<header class="header " id="header">
+  <nav class="nav container ">
+    <a href="#" class="nav__logo">
+        <img src="/carnaval-riojano2025-100x52.png" alt="logo de carnaval riojano 2025">
+    </a>
+
+    <div class="nav__menu" id="nav-menu">
+      <ul class="nav__list">
+        <li class="nav__item">
+          <a href="/" class="nav__link ">Inicio</a>
+        </li>
+
+        <li class="nav__item">
+          <a href="/sobre-el-carnaval" class="nav__link">Sobre el Carnaval</a>
+        </li>
+
+        <li class="nav__item">
+          <a href="/reinas" class="nav__link">Reinas</a>
+        </li>
+
+        <li class="nav__item">
+          <a href="/agencias" class="nav__link">Agencias</a>
+        </li>
+
+        <li class="nav__item">
+          <a href="/hospedajes" class="nav__link">Hospedajes</a>
+        </li>
+
+        <li class="nav__item">
+          <a href="/programacion" class="nav__link">Programación</a>
+        </li>
+
+        <li class="nav__item nav__separator">
+          <ButonHeader />
+        </li>
+      </ul>
+
+      <!-- CLOSE BUTTON -->
+      <button class="nav__close" id="nav-close">
+        <span class="material-symbols--close-rounded"></span>
+      </button>
+    </div>
+
+    <!-- TOGGLE BUTTON -->
+    <button class="nav__toggle" id="nav-toggle">
+      <span class="material-symbols--menu-rounded"></span>
+    </button>
+  </nav>
+</header>
+
+
+<script src="/src/components/header/Header.js"></script>
+  
+</script>
+

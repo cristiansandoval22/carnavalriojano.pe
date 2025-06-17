@@ -1,0 +1,27 @@
+---
+import "./AgencyCard.css"
+
+interface Props {
+    title: string;
+    descripcion: string;
+    imagen: string;
+    slug: string;
+}
+
+const { title, descripcion, imagen, slug } = Astro.props;
+---
+
+<div class="card">
+    <img
+        src={`/agencias/${imagen}`}
+        alt={title}
+        class="card-img"
+    />
+    <div class="card-content">
+        <h3 class="card-title">{title}</h3>
+        <p class="card-desc">
+            {descripcion}
+        </p>
+        <a href={`/agencias/${slug}`} class="card-btn">Ver más</a>
+    </div>
+</div>

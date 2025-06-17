@@ -1,0 +1,75 @@
+.card-hospedaje {
+  width: 320px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  transition: transform 0.3s ease;
+}
+
+.card-hospedaje:hover {
+  transform: scale(1.02);
+}
+
+.card-img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-content {
+  padding: 16px;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+  color: #000534;
+}
+
+.card-location {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+
+  display: flex;
+  align-items: center;
+}
+.card-location span {
+  color: var(--color-primary);
+}
+
+.card-stars {
+  color: #f4b400;
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+.card-services {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.card-services li {
+  margin-bottom: 4px;
+}
+
+.card-btn {
+  display: inline-block;
+  padding: 8px 12px;
+  background-color: var(--color-primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+.card-btn:hover {
+  background-color: #df3666;
+}

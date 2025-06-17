@@ -1,0 +1,146 @@
+/* base.css */
+/* Reset + Escala tipográfica + Estilos para blog, Markdown y bloques de código */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  /* Tipografía */
+  --font-family-base: "Poppins", sans-serif;
+  --line-height-base: 1.6;
+
+  /* Tamaños base para móvil */
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+  --fs-h1: 1.75rem;
+  --fs-h2: 1.5rem;
+  --fs-h3: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  :root {
+      --fs-body: 1.125rem;
+      --fs-h1: 2.25rem;
+      --fs-h2: 2rem;
+      --fs-h3: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+      --fs-h1: 2.5rem;
+      --fs-h2: 2.25rem;
+      --fs-h3: 1.75rem;
+  }
+}
+
+/* Reset general */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--fs-body);
+  line-height: var(--line-height-base);
+}
+
+/* Encabezados */
+h1 {
+  font-size: var(--fs-h1);
+  font-weight: bold;
+  margin: 1.5rem 0 1rem;
+}
+
+h2 {
+  font-size: var(--fs-h2);
+  font-weight: bold;
+  margin: 1.25rem 0 1rem;
+}
+
+h3 {
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  margin: 1rem 0 0.75rem;
+}
+
+/* Texto */
+p {
+  font-size: var(--fs-body);
+  margin: 1rem 0;
+  text-wrap: balance;
+}
+
+small {
+  font-size: var(--fs-small);
+  color: #666;
+}
+
+/* Links */
+a {
+  color: #0a00f3;
+  text-decoration: none;
+  display: block;
+}
+
+/* Listas */
+ul,
+ol {
+  padding-left: 2rem;
+  margin: 1rem 0;
+}
+
+/* Imágenes */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Citas */
+blockquote {
+  border-left: 4px solid #0a00f3;
+  padding-left: 1rem;
+  margin: 1rem 0;
+  color: #000534;
+  font-style: italic;
+}
+
+/* Código en línea */
+code {
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+  background-color: #f4f4f4;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-size: 0.95em;
+}
+
+/* Bloques de código */
+pre {
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+  background-color: #f4f4f4;
+  padding: 1rem;
+  overflow-x: auto;
+  border-radius: 6px;
+  margin: 1rem 0;
+  color: #000534;
+  font-size: 0.95rem;
+}
+
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.section {
+  padding-block: 5rem ;
+}
+
+main {
+  overflow: hidden; /*For animation*/
+}

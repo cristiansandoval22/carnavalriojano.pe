@@ -1,0 +1,24 @@
+---
+import "./DayScheduleCard.css";
+
+interface Props {
+    day: string;
+    activities: string;
+    slug: string;
+}   
+
+const { day, activities,slug } = Astro.props;
+
+
+
+
+
+---
+
+<a href={`/programacion/${slug}`} class="day-card">
+    <div class="day-card__header">
+        <span class="day-card__badge">{activities}</span>
+        <h3 class="day-card__date">{day}</h3>
+    </div>
+    <p class="day-card__cta">Ver programación completa →</p>
+</a>

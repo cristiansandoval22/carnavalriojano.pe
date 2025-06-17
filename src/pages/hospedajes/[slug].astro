@@ -1,0 +1,40 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import GoBack from "../../components/goBack/goBack.astro";
+
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+    const hospedajes= await getCollection("hospedajes");
+
+    return hospedajes.map((hospedaje) => ({
+        params: { slug: hospedaje.slug },
+        props: { hospedaje },
+    }));
+}
+const { hospedaje } = Astro.props;
+const { data } = hospedaje;
+const { title } = data;
+
+const { Content } = await render(hospedaje);
+---
+
+
+<Layout title={title}>
+    <section class="section container">
+        <div class="content">
+            <nav class="headers__buttons">
+                <GoBack text="Volver a inicio" link="/" />
+                <GoBack text="Ver todas las hospedajes" link="/hospedajes" />
+            </nav>
+
+            <h1> {title}</h1>
+           
+
+            <nav class="headers__buttons">
+                <GoBack text="Volver a inicio" link="/" />
+                <GoBack text="Ver todas las hospedajes" link="/hospedajes" /> 
+            </nav>
+        </div>
+    </section>
+</Layout>

@@ -1,0 +1,12 @@
+---
+import "./goBack.css";
+interface Props {
+    text: string;
+    link: string;
+}
+
+const { text, link  } = Astro.props;
+---
+
+
+<a class="btn" href={link}>{text}</a>
