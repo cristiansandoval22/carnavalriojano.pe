@@ -12,7 +12,7 @@
 
 .marquee {
     position: relative;
-    --duration: 10s;
+    --duration: 15s;
     --gap: 1rem;
     display: -webkit-box;
     display: -ms-flexbox;
