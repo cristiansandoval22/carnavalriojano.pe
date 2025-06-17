@@ -47,6 +47,9 @@
   animation-play-state: paused;
 }
 
+.content-box img{
+    max-width: 150px;
+}
 
 @keyframes scroll {
     0% {
