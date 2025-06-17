@@ -1,6 +1,7 @@
 ---
 import Basehead from "../components/BaseHead/BaseHead.astro";
 import Header from "../components/header/Header.astro";
+import Footer from "../components/footer/Footer.astro";
 import Loader from "../components/loader/Loader.astro";
 import "../styles/base.css" 
 import "../styles/icons.css"
@@ -30,6 +31,7 @@ const { title } = Astro.props;
 		<main>
 			<slot />
 		</main>
+		<Footer />
 	</body>
 </html>
 

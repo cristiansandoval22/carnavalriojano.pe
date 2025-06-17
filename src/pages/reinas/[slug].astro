@@ -17,23 +17,24 @@ const { title, barrio, edad, profesion, imagenPrincipal } = data;
 
 const { Content } = await render(reina);
 ---
+
 <Layout title={title}>
     <section class="section container">
         <div class="content">
             <nav class="headers__buttons">
                 <GoBack text="Volver a inicio" link="/" />
-                <GoBack text="Ver todas las reinas" link="/reinas" />
+                <GoBack text="Todas las reinas" link="/reinas" />
             </nav>
-
-            <h1>Candidata del {barrio} - {title}</h1>
+            <div class="reina__image">
+                <img
+                    class="reina__image_img"
+                    src={`/reinas/${imagenPrincipal}`}
+                    alt={`Reina de Carnaval Riojano 2025 - ${title}`}
+                />
+            </div>
+            
+            <h1 class="reina__title">{title}</h1>
             <div class="reina__wrapper">
-                <div class="reina__image">
-                    <img
-                        class="reina__image"
-                        src={`/reinas/${imagenPrincipal}`}
-                        alt={`Reina de Carnaval Riojano 2025 - ${title}`}
-                    />
-                </div>
                 <div class="reina__info">
                     <p class="reina__info__barrio">{barrio}</p>
                     <p class="reina__info__edad">{edad} años</p>
@@ -47,7 +48,7 @@ const { Content } = await render(reina);
 
             <nav class="headers__buttons">
                 <GoBack text="Volver a inicio" link="/" />
-                <GoBack text="Ver todas las reinas" link="/reinas" />
+                <GoBack text="Todas las reinas" link="/reinas" />
             </nav>
         </div>
     </section>
