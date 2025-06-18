@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import GoBack from "../../components/goBack/goBack.astro";
+import HotelCard from "../../components/hospedaje/HotelCard/HotelCard.astro";
 
 import { getCollection } from "astro:content";
 
@@ -14,25 +15,24 @@ const hospedajes = await getCollection("hospedajes");
                 <GoBack text="Volver a inicio" link="/" />
             </nav>
 
-            {
+            <div class="grid__hospedajes">
+                {
                 hospedajes.map((hospedaje) => {
                     const { slug, data } = hospedaje;
-                    const { title, descripcion, direccion, telefono, imagen } =
-                        data;
+                    const { title, direccion, imagen } = data;
 
                     return (
-                        <div style="background-color: aqua;">
-                            <a href={`/hospedajes/${slug}`}>
-                                
-                                <h3>{title}</h3>
-                                <p>{descripcion}</p>
-                                <p>{telefono}</p>
-                                <p>{direccion}</p>
-                            </a>
-                        </div>
+                        <HotelCard
+                            title={title}
+                            direccion={direccion}
+                            imagen={imagen}
+                            slug={slug}
+                        />
                     );
                 })
             }
+            </div>
+            
         </div>
     </section>
 </Layout>

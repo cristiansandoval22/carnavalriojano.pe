@@ -14,19 +14,43 @@ const reinas = await getCollection("reinas");
                 {
                     reinas.map((reina) => {
                         const { slug, data } = reina;
-                        const { title, imagenPrincipal, barrio, edad, profesion } = data;
+                        const {
+                            title,
+                            imagenPrincipal,
+                            barrio,
+                            edad,
+                            profesion,
+                        } = data;
 
                         return (
-                            <ReinaCard
-                                reinaImg={imagenPrincipal}
-                                reinaName={title}
-                                reinaBarrio={barrio}
-                                reinaEdad={edad}
-                                reinaProfesion={profesion}
-                                slug={slug}
-                                />
-                        );  
-                    }) 
+                           <ReinaCard 
+                           reinaImg={imagenPrincipal}
+                           reinaName={title}
+                           reinaBarrio={barrio}
+                           reinaEdad={edad}
+                           reinaProfesion={profesion}
+                           slug={slug}
+                           />
+
+                            // <a href={`/reinas/${slug}`} class="reina__article-link">
+                            //     <article class="reina__article" >
+                            //         <figure class="reina__article-image-wrapper">
+                            //             <img 
+                            //                 class="reina__article-image"
+                            //                 src={`/reinas/${imagenPrincipal}`}
+                            //                 alt="canditada - {title} del {barrio}"
+                            //             />
+                            //         </figure>
+                            //         <div class="reina__article-content">
+                            //             <h3 class="reina__article-title">{title}</h3>
+                            //             <p  class="reina__article-info"> {profesion}</p>
+                            //             <p class="reina__article-info">{barrio}</p>
+                            //             <p class="reina__article-info">{edad} años</p>
+                            //         </div>
+                            //     </article>
+                            // </a>
+                        );
+                    })
                 }
             </div>
         </div>

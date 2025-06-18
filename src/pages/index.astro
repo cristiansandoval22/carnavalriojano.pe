@@ -3,13 +3,11 @@ import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import PartnerCarousel from "../components/PartnerCarousel/PartnerCarousel.astro";
 import ReinaCarousel from "../components/reinas/Reinas-carousel/ReinasCarousel.astro";
-import Heroimg1 from "../assets/carnaval-riojano.png";
 import GoBack from "../components/goBack/goBack.astro";
 import ScheduleCarousel from "../components/programacion/ScheduleCarousel/ScheduleCarousel.astro";
 import AgencyCarousel from "../components/agencia/agencyCarousel/agencyCarousel.astro";
 import HotelCarousel from "../components/hospedaje/hotelCarousel/HotelCarousel.astro";
-import GaleriaCarousel from "../components/galeria/galeriaCarousel/galeriaCarousel.astro";
-
+import Contador from "../components/contador/contador.astro";
 const reinas = await getCollection("reinas");
 ---
 
@@ -21,17 +19,31 @@ const reinas = await getCollection("reinas");
             </h1>
 
             <p class="hero__subtitle">
-                Del 28 de febrero al 2 de marzo • Rioja, San Martín, Perú
+                <strong>Pre Carnaval:</strong> Del 05 de enero al 17 de febrero
+                <br>
+                <strong>Centrales</strong> Del 17 al 23 de febrero
             </p>
-
-            <a href="/programacion" class="hero__button">
+           <div class="hero__buttons">
+             <a href="/programacion" class="hero__button">
                 <span class="akar-icons--calendar"></span>
                 Ver programación
             </a>
+
+            <a 
+            target="_blank"
+            href="https://www.google.com/maps/dir//Rioja/@-6.0610539,-77.2078383,13z/data=!4m8!4m7!1m0!1m5!1m1!1s0x91b727bf4cf0ec33:0x637b94ce3004ed3d!2m2!1d-77.1657716!2d-6.0570484?entry=ttu&g_ep=EgoyMDI1MDExMC4wIKXMDSoASAFQAw%3D%3D" class="hero__button">
+                <span class="mdi--location"></span>
+                Como llegar
+            </a>
+           </div>
         </div>
+
         <div class="hero__image">
-            <!-- <Slider /> -->
-            <img src={Heroimg1.src} alt="Carnaval Riojano 2025" />
+            <img
+                class="hero__image-img"
+                src="/hero-img.jpg"
+                alt="Carnaval Riojano 2025"
+            />
         </div>
     </section>
 
@@ -100,10 +112,10 @@ const reinas = await getCollection("reinas");
             Programación Oficial del Carnaval Riojano 2026
         </h2>
         <p class="programacion__subtitle">
-            Descubre todo lo que hemos preparado para ti. 
-            Explora día por día las actividades del carnaval: 
-            desfiles, concursos, presentaciones culturales y mucho más. 
-            ¡No te pierdas ningún momento de esta fiesta inolvidable en Rioja!
+            Descubre todo lo que hemos preparado para ti. Explora día por día
+            las actividades del carnaval: desfiles, concursos, presentaciones
+            culturales y mucho más. ¡No te pierdas ningún momento de esta fiesta
+            inolvidable en Rioja!
         </p>
         <ScheduleCarousel />
         <div class="btn-wrapper">
@@ -122,7 +134,6 @@ const reinas = await getCollection("reinas");
         <ReinaCarousel />
         <div class="btn-wrapper">
             <GoBack text="Ver todas las reinas" link="/reinas" />
-
         </div>
     </section>
 
@@ -132,11 +143,11 @@ const reinas = await getCollection("reinas");
         </h2>
         <p class="agencias__subtitle">
             Organiza tu visita con el apoyo de las agencias autorizadas.
-            Descubre rutas turísticas, experiencias amazónicas y paquetes 
+            Descubre rutas turísticas, experiencias amazónicas y paquetes
             exclusivos para disfrutar del carnaval sin preocupaciones.
         </p>
         <AgencyCarousel />
-        
+
         <div class="btn-wrapper">
             <GoBack text="ver todas las agencias" link="/agencias" />
         </div>
@@ -144,12 +155,12 @@ const reinas = await getCollection("reinas");
 
     <section class="programacion section container">
         <h2 class="section__title hospedajes__title">
-           Alojamientos Recomendados
+            Alojamientos Recomendados
         </h2>
         <p class="hospedajes__subtitle">
-            Encuentra hospedaje cómodo y seguro cerca de toda la fiesta. 
-            Desde hoteles hasta hostales familiares, te ofrecemos las mejores 
-            opciones para descansar y vivir el Carnaval Riojano al máximo.
+            Encuentra hospedaje cómodo y seguro cerca de toda la fiesta. Desde
+            hoteles hasta hostales familiares, te ofrecemos las mejores opciones
+            para descansar y vivir el Carnaval Riojano al máximo.
         </p>
         <HotelCarousel />
         <div class="btn-wrapper">

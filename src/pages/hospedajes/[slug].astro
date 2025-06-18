@@ -5,7 +5,7 @@ import GoBack from "../../components/goBack/goBack.astro";
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
-    const hospedajes= await getCollection("hospedajes");
+    const hospedajes = await getCollection("hospedajes");
 
     return hospedajes.map((hospedaje) => ({
         params: { slug: hospedaje.slug },
@@ -14,26 +14,77 @@ export async function getStaticPaths() {
 }
 const { hospedaje } = Astro.props;
 const { data } = hospedaje;
-const { title } = data;
+const { title, direccion, imagen, descripcionLong, horarioAtencion } = data;
 
 const { Content } = await render(hospedaje);
 ---
-
 
 <Layout title={title}>
     <section class="section container">
         <div class="content">
             <nav class="headers__buttons">
                 <GoBack text="Volver a inicio" link="/" />
-                <GoBack text="Ver todas las hospedajes" link="/hospedajes" />
+                <GoBack text="Ver hospedajes" link="/hospedajes" />
             </nav>
 
-            <h1> {title}</h1>
-           
+            <section class="grid__content">
+                <div class="content__info">
+                    <h2 class="content__title">{title}</h2>
+                    <p class="content__location">
+                        <span class="mdi--location"></span>
+                        {direccion}
+                    </p>
+                    <p class="content__descripcion">{descripcionLong}</p>
+                    <p class="content__horarioAtencion">
+                        <span class="mingcute--time-line"></span>
+                        {horarioAtencion}
+                    </p>
+                </div>
+
+                <figure class="content__image">
+                    <img class="content__image-img" src={`/hospedaje/${imagen}`} alt={title} />
+                </figure>
+            </section>
+
+            <section>
+                <div class="hospedaje__info">
+                    <h3 class="hospedaje__info-title">Datos de contacto</h3>
+                    <div class="hospedaje_links">
+                        <a
+                            target="_blank"
+                            class="hospedaje__link whatsapp"
+                            href=""
+                        >
+                            <span class="ic--baseline-whatsapp"></span>
+                            Contactar
+                        </a>
+
+                        <a
+                            target="_blank"
+                            class="hospedaje__link facebook"
+                            href=""
+                        >
+                            <span class="ic--baseline-facebook"></span>
+                            facebook
+                        </a>
+
+                        <a
+                            target="_blank"
+                            class="hospedaje__link instagram"
+                            href=""
+                        >
+                            <span class="mdi--instagram"></span>
+                            instagram
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <Content />
 
             <nav class="headers__buttons">
                 <GoBack text="Volver a inicio" link="/" />
-                <GoBack text="Ver todas las hospedajes" link="/hospedajes" /> 
+                <GoBack text="Ver hospedajes" link="/hospedajes" />
             </nav>
         </div>
     </section>
