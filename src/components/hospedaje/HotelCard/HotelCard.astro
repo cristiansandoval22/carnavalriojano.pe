@@ -10,7 +10,7 @@ interface Props {
 const { title, direccion, imagen, slug } = Astro.props;
 ---
 <div class="card-hospedaje">
-  <img src={`/hospedaje/${imagen}`} alt="Hospedaje El Refugio" class="card-img">
+  <img src={`/hospedaje/${imagen}`} alt={title} class="card-img">
   <div class="card-content">
     <h3 class="card-title">{title}</h3>
     <p class="card-location">

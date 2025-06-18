@@ -39,9 +39,11 @@ const hospedajes = defineCollection({
   schema: z.object({
     title: z.string(),
     descripcion: z.string(),
+    descripcionLong: z.string(),
     direccion: z.string(),
     telefono: z.string(),
     imagen: z.string(),
+    horarioAtencion: z.string(),
   }),
 })
 export const collections = { reinas, programacion, agencias, hospedajes };
