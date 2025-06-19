@@ -20,36 +20,34 @@ const { Content } = await render(reina);
 
 <Layout title={title}>
     <section class="section container">
-        <div class="content">
-            <nav class="headers__buttons">
-                <GoBack text="Volver a inicio" link="/" />
-                <GoBack text="Todas las reinas" link="/reinas" />
-            </nav>
-            <div class="reina__image">
-                <img
-                    class="reina__image_img"
-                    src={`/reinas/${imagenPrincipal}`}
-                    alt={`Reina de Carnaval Riojano 2025 - ${title}`}
-                />
-            </div>
-            
-            <h1 class="reina__title">{title}</h1>
-            <div class="reina__wrapper">
-                <div class="reina__info">
-                    <p class="reina__info__barrio">{barrio}</p>
-                    <p class="reina__info__edad">{edad} años</p>
-                    <p class="reina__info__profesion">{profesion}</p>
-                </div>
-            </div>
-
-            <div>
-                <Content />
-            </div>
-
-            <nav class="headers__buttons">
-                <GoBack text="Volver a inicio" link="/" />
-                <GoBack text="Todas las reinas" link="/reinas" />
-            </nav>
+        <nav class="headers__buttons">
+            <GoBack text="Volver a inicio" link="/" />
+            <GoBack text="Todas las reinas" link="/reinas" />
+        </nav>
+        <div class="reina__image">
+            <img
+                class="reina__image_img"
+                src={`/reinas/${imagenPrincipal}`}
+                alt={`Reina de Carnaval Riojano 2025 - ${title}`}
+            />
         </div>
+
+        <h1 class="reina__title">{title}</h1>
+        <div class="reina__wrapper">
+            <div class="reina__info">
+                <p class="reina__info__barrio">{barrio}</p>
+                <p class="reina__info__edad">{edad} años</p>
+                <p class="reina__info__profesion">{profesion}</p>
+            </div>
+        </div>
+
+        <div>
+            <Content />
+        </div>
+
+        <nav class="headers__buttons">
+            <GoBack text="Volver a inicio" link="/" />
+            <GoBack text="Todas las reinas" link="/reinas" />
+        </nav>
     </section>
 </Layout>

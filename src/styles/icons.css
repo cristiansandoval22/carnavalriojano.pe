@@ -12,7 +12,6 @@
   mask-size: 100% 100%;
 }
 
-
 .material-symbols--close-rounded {
   display: inline-block;
   width: inherit;
@@ -54,7 +53,6 @@
   -webkit-mask-size: 100% 100%;
   mask-size: 100% 100%;
 }
-
 
 .mdi--location {
   display: inline-block;
@@ -131,6 +129,75 @@
   width: 24px;
   height: 24px;
   --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M19.05 4.91A9.82 9.82 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28'/%3E%3C/svg%3E");
+  background-color: currentColor;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+.mdi--home-city {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M0 21V10l7.5-5l7.5 5v11h-5v-7H5v7zM24 2v19h-7V8.93l-1-.66V6h-2v.93l-4-2.66V2zm-3 12h-2v2h2zm0-4h-2v2h2zm0-4h-2v2h2z'/%3E%3C/svg%3E");
+  background-color: currentColor;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+.hugeicons--party {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' fill-rule='evenodd' d='M13.809 1.61c.36-.22.82-.1 1.03.25c.58.97.86 3.12-1.36 4.97c-.32.26-.79.22-1.06-.1a.76.76 0 0 1 .1-1.06c1.62-1.35 1.25-2.67 1.03-3.03a.76.76 0 0 1 .26-1.03m5.72 4.17c.29-.29.29-.77 0-1.06a.755.755 0 0 0-1.06 0l-3 3c-.29.29-.29.77 0 1.06s.77.29 1.06 0zm-6.63 3.64l1.93 1.93c.93.94 1.7 1.7 2.19 2.36c.51.69.85 1.42.69 2.26c-.15.84-.73 1.4-1.45 1.86c-.71.45-1.69.89-2.9 1.42l-3.43 1.53c-2.03.9-3.64 1.61-4.86 1.96c-1.19.35-2.36.45-3.18-.38c-.83-.82-.73-1.99-.38-3.18c.35-1.22 1.06-2.83 1.96-4.86l1.5-3.37l.03-.06c.53-1.21.97-2.19 1.42-2.9c.46-.72 1.02-1.3 1.86-1.45c.84-.16 1.57.18 2.26.69c.66.49 1.42 1.26 2.36 2.19m-3.26-.99c-.55-.41-.85-.46-1.09-.42c-.24.05-.5.2-.87.79c-.22.35-.45.8-.71 1.37c.02.01.04.03.06.05l7 7s.04.04.05.06c.57-.26 1.02-.49 1.37-.71c.59-.37.74-.63.79-.87c.04-.24-.01-.54-.42-1.09c-.42-.57-1.11-1.25-2.1-2.24l-1.84-1.84c-.99-.99-1.67-1.68-2.24-2.1m-4.77 6.44l1.44-3.25l6.32 6.32l-3.25 1.44l-.19.08a.6.6 0 0 0-.16-.24l-4-4a.6.6 0 0 0-.24-.16zm-.71 1.6l3.62 3.62c-1.3.57-2.32.98-3.12 1.21c-1.15.33-1.53.19-1.71 0c-.19-.18-.33-.56 0-1.71c.23-.8.64-1.82 1.21-3.12m18.23-7.06c-.97-.58-3.12-.86-4.97 1.36c-.26.32-.22.79.1 1.06c.32.26.79.22 1.06-.1c1.35-1.62 2.67-1.25 3.03-1.03c.36.21.82.09 1.03-.26c.22-.36.1-.82-.25-1.03m-4.39-7.91c.41 0 .75.34.75.75v.02c0 .41-.34.75-.75.75s-.75-.34-.75-.75v-.02c0-.41.34-.75.75-.75m4.75 4.75c0-.41-.34-.75-.75-.75s-.75.34-.75.75v.02c0 .41.34.75.75.75s.75-.34.75-.75zm-1.75 6.25c.41 0 .75.34.75.75v.02c0 .41-.34.75-.75.75s-.75-.34-.75-.75v-.02c0-.41.34-.75.75-.75m-9.25-9.25c0-.41-.34-.75-.75-.75s-.75.34-.75.75v.02c0 .41.34.75.75.75s.75-.34.75-.75z' color='%23000'/%3E%3C/svg%3E");
+  background-color: currentColor;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+.mdi--gift-outline {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M22 12v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8a1 1 0 0 1-1-1V8a2 2 0 0 1 2-2h3.17A3 3 0 0 1 6 5a3 3 0 0 1 3-3c1 0 1.88.5 2.43 1.24v-.01L12 4l.57-.77v.01C13.12 2.5 14 2 15 2a3 3 0 0 1 3 3a3 3 0 0 1-.17 1H21a2 2 0 0 1 2 2v3a1 1 0 0 1-1 1M4 20h7v-8H4zm16 0v-8h-7v8zM9 4a1 1 0 0 0-1 1a1 1 0 0 0 1 1a1 1 0 0 0 1-1a1 1 0 0 0-1-1m6 0a1 1 0 0 0-1 1a1 1 0 0 0 1 1a1 1 0 0 0 1-1a1 1 0 0 0-1-1M3 8v2h8V8zm10 0v2h8V8z'/%3E%3C/svg%3E");
+  background-color: currentColor;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+.tabler--users {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 7a4 4 0 1 0 8 0a4 4 0 1 0-8 0M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2m1-17.87a4 4 0 0 1 0 7.75M21 21v-2a4 4 0 0 0-3-3.85'/%3E%3C/svg%3E");
+  background-color: currentColor;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+.material-symbols--check-rounded {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='m9.55 15.15l8.475-8.475q.3-.3.7-.3t.7.3t.3.713t-.3.712l-9.175 9.2q-.3.3-.7.3t-.7-.3L4.55 13q-.3-.3-.288-.712t.313-.713t.713-.3t.712.3z'/%3E%3C/svg%3E");
   background-color: currentColor;
   -webkit-mask-image: var(--svg);
   mask-image: var(--svg);

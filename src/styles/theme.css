@@ -140,7 +140,7 @@ body {
     max-width: 1000px;
     margin: auto;
     margin-top: 2rem;
-}
+}  
 
 .image {
     aspect-ratio: 16/9;
@@ -209,6 +209,7 @@ body {
     margin-top: 1rem;
 }
 
+
 /* slug hospedajes */
 .grid__content {
     display: grid;
@@ -218,7 +219,7 @@ body {
     padding: 1rem;
     border-radius: 1rem;
     margin-top: 1.5rem;
-    box-shadow: rgba(0, 0, 0, 0.44) 3px 8px 12px 0px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .hospedaje__info-title{
     text-align: center;
@@ -257,6 +258,25 @@ body {
     gap: 0.5rem;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
+}
+.contenido__grid{
+    display: grid;
+    margin-bottom: 1rem;
+}
+.galeria{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+}
+.galeria img{
+    overflow: hidden;
+    border-radius: 0.5rem;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+    transition: transform 0.3s ease;
+}
+.galeria img:hover{
+    transform: scale(1.02);
 }
 
 
@@ -361,4 +381,11 @@ body {
         justify-items: center;
     }
 
+}
+
+@media screen and (min-width: 1024px) {
+    .contenido__grid {
+       grid-template-columns: repeat(2, 1fr);
+       margin-top: 2rem;
+    }
 }

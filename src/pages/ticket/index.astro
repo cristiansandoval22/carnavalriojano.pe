@@ -1,0 +1,107 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import GoBack from "../../components/goBack/goBack.astro";
+---
+
+<Layout title="formulario de Tickets">
+  <section class="ticket section container">
+    <GoBack text="Volver" link="/vip" />
+    <h1 class="ticket__title">Tickets Adicionales</h1>
+    <p class="ticket__description">
+      ¡Aumenta tus posibilidades de ganar en nuestros sorteos exclusivos con
+      tickets adicionales! Cada ticket cuesta S/5.00 y te da una oportunidad más
+      para llevarte premios increíbles.
+    </p>
+
+    <div class="ticket__container">
+      
+      <div class="ticket__info"> 
+        <div class="ticket__image-container">
+          <img class="ticket__image" src="/ticket-img.jpg" alt="" />
+        </div>
+        <div class="ticket__important">
+          ⚠️ <strong>Importante:</strong> Al completar este formulario, estás aceptando los 
+          <a href="/vip/terminos" target="_blank" class="ticket__important-link">Términos y Condiciones</a> del evento.
+        </div>
+      </div>
+      <div class="ticket__iframe-container">
+        <iframe
+          src="https://api.bysness.pe/widget/form/Pu5KXfytq80vnuqnEan4"
+          style="width:100%;height:100%;border:none;border-radius:3px"
+          id="inline-Pu5KXfytq80vnuqnEan4"
+          data-layout="{'id':'INLINE'}"
+          data-trigger-type="alwaysShow"
+          data-trigger-value=""
+          data-activation-type="alwaysActivated"
+          data-activation-value=""
+          data-deactivation-type="neverDeactivate"
+          data-deactivation-value=""
+          data-form-name="tickets"
+          data-height="771"
+          data-layout-iframe-id="inline-Pu5KXfytq80vnuqnEan4"
+          data-form-id="Pu5KXfytq80vnuqnEan4"
+          title="tickets"
+        >
+        </iframe>
+      </div>
+    </div>
+  </section>
+  <section class="footer__buttons">
+    <GoBack text="Volver" link="/vip" />
+    <GoBack text="Terminos y Condiciones" link="/terminos-y-condiciones" />
+  </section>
+</Layout>
+<script src="https://api.bysness.pe/js/form_embed.js"></script>
+<style>
+  .footer__buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .ticket__container{
+    margin-top: 2rem;
+  }
+  .ticket {
+    margin-bottom: 1rem;
+  }
+  .ticket__title {
+    color: purple;
+  }
+  .ticket__important {
+    background-color: #fff3cd;
+    border-left: 4px solid #ffeeba;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+  }
+  .ticket__important-link {
+    color: #0a00f3;
+    font-weight: bold;
+    display: inline-flex;
+  }
+  @media screen and (min-width: 768px) {
+    .ticket__title {
+      text-align: center;
+    }
+    .ticket__description {
+      text-align: center;
+    }
+    .ticket__container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+    .ticket__image-container {
+      aspect-ratio: 1/1;
+      max-width: 400px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    .ticket__image {
+      object-fit: contain;
+      width: 100%;
+      height: 100%;
+    }
+  }
+</style>

@@ -7,11 +7,10 @@ import GoBack from "../components/goBack/goBack.astro";
 import ScheduleCarousel from "../components/programacion/ScheduleCarousel/ScheduleCarousel.astro";
 import AgencyCarousel from "../components/agencia/agencyCarousel/agencyCarousel.astro";
 import HotelCarousel from "../components/hospedaje/hotelCarousel/HotelCarousel.astro";
-import Contador from "../components/contador/contador.astro";
 const reinas = await getCollection("reinas");
 ---
 
-<Layout title="Carnaval Riojano 2025 – Cultura y tradición">
+<Layout title="Carnaval Riojano 2026 – Cultura y tradición">
     <section class="hero section container">
         <div class="hero__content">
             <h1 class="section__title">
@@ -139,12 +138,12 @@ const reinas = await getCollection("reinas");
 
     <section class="programacion section container">
         <h2 class="section__title agencias__title">
-            Agencias de Viaje Oficiales
+            Agencias de viaje
         </h2>
         <p class="agencias__subtitle">
-            Organiza tu visita con el apoyo de las agencias autorizadas.
-            Descubre rutas turísticas, experiencias amazónicas y paquetes
-            exclusivos para disfrutar del carnaval sin preocupaciones.
+            Descubre agencias que te ayudan a planear tu viaje al Carnaval Riojano. 
+            Conoce opciones confiables que ofrecen paquetes y servicios para disfrutar 
+            al máximo esta gran celebración.
         </p>
         <AgencyCarousel />
 
@@ -155,12 +154,12 @@ const reinas = await getCollection("reinas");
 
     <section class="programacion section container">
         <h2 class="section__title hospedajes__title">
-            Alojamientos Recomendados
+            Alojamientos para tu estadía
         </h2>
         <p class="hospedajes__subtitle">
-            Encuentra hospedaje cómodo y seguro cerca de toda la fiesta. Desde
-            hoteles hasta hostales familiares, te ofrecemos las mejores opciones
-            para descansar y vivir el Carnaval Riojano al máximo.
+            Encuentra opciones de alojamiento para todos los gustos y presupuestos. 
+            Desde hoteles y hospedajes hasta espacios familiares o alternativos, 
+            vive el Carnaval Riojano con comodidad, seguridad y cercanía a toda la fiesta.
         </p>
         <HotelCarousel />
         <div class="btn-wrapper">

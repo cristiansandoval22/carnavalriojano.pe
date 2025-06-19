@@ -19,12 +19,12 @@ const hospedajes = await getCollection("hospedajes");
                 {
                 hospedajes.map((hospedaje) => {
                     const { slug, data } = hospedaje;
-                    const { title, direccion, imagen } = data;
+                    const { title, direccion, imagen, tipo } = data;
 
                     return (
                         <HotelCard
                             title={title}
-                            direccion={direccion}
+                            tipo = {tipo}
                             imagen={imagen}
                             slug={slug}
                         />

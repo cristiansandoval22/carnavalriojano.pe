@@ -1,0 +1,109 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import GoBack from "../../components/goBack/goBack.astro";
+---
+
+<Layout title="formulario de Inscripción al grupo VIP">
+  <section class="section container">
+    <GoBack text="Volver" link="/vip" />
+    <h1 class="inscripcion__title">Inscríbete al Carnaval Riojano 2026</h1>
+
+    <p class="inscripcion__description">
+      Completa el siguiente formulario y asegura tu lugar en el evento más
+      esperado del año. Accede a beneficios exclusivos, participa en sorteos y
+      vive la fiesta como nunca.
+    </p>
+    
+    
+    <div class="inscripcion__container">
+      
+      <div class="inscripcion__info"> 
+        <div class="inscripcion__image-container">
+          <img class="inscripcion__image" src="/ticket-img.jpg" alt="" />
+        </div>
+        <div class="inscripcion__important">
+          ⚠️ <strong>Importante:</strong> Al completar este formulario, estás aceptando los 
+          <a href="/vip/terminos" target="_blank" class="inscripcion__important-link">Términos y Condiciones</a> del evento.
+        </div>
+      </div>
+     
+      <div class="inscripcion__iframe-container">
+        <iframe
+          src="https://api.bysness.pe/widget/form/d8pXlVSslVaKH4CWfljd"
+          style="width:100%;height:100%;border:none;border-radius:3px"
+          id="inline-d8pXlVSslVaKH4CWfljd"
+          data-layout="{'id':'INLINE'}"
+          data-trigger-type="alwaysShow"
+          data-trigger-value=""
+          data-activation-type="alwaysActivated"
+          data-activation-value=""
+          data-deactivation-type="neverDeactivate"
+          data-deactivation-value=""
+          data-form-name="Inscripcion"
+          data-height="612"
+          data-layout-iframe-id="inline-d8pXlVSslVaKH4CWfljd"
+          data-form-id="d8pXlVSslVaKH4CWfljd"
+          title="Inscripcion"
+        >
+        </iframe>
+      </div>
+    </div>
+
+    <script src="https://api.bysness.pe/js/form_embed.js"></script>
+  </section>
+  <section class="footer__buttons">
+    <GoBack text="Volver" link="/vip" />
+    <GoBack text="Terminos y Condiciones" link="/terminos-y-condiciones" />
+  </section>
+</Layout>
+
+<style>
+  .footer__buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .inscripcion__container{
+    margin-top: 2rem;
+  }
+  .inscripcion__title {
+    color:#b45309;
+  }
+  .inscripcion__important {
+    background-color: #fff3cd;
+    border-left: 4px solid #ffeeba;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+  }
+  .inscripcion__important-link {
+    color: #0a00f3;
+    font-weight: bold;
+    display: inline-flex;
+  }
+  @media screen and (min-width: 768px) {
+    .inscripcion__title {
+      text-align: center;
+    }
+    .inscripcion__description {
+      text-align: center;
+    }
+    .inscripcion__container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+    .inscripcion__image-container {
+      aspect-ratio: 1/1;
+      max-width: 400px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    .inscripcion__image {
+      object-fit: contain;
+      width: 100%;
+      height: 100%;
+    }
+  }
+</style>
