@@ -10,13 +10,11 @@ const programacion = await getCollection("programacion");
 
 <Layout title="Programación del Carnaval Riojano 2025">
     <section class="section container">
-        <div class="content">
-
-            <nav >
-                <GoBack text="Volver a inicio" link="/" />
-            </nav>
-            <div class="grid__days">
-               {
+        <nav>
+            <GoBack text="Volver a inicio" link="/" />
+        </nav>
+        <div class="grid__days">
+            {
                 programacion
                     .sort((a, b) => a.data.id - b.data.id) // 👈 orden manual
                     .map((day) => {
@@ -34,7 +32,6 @@ const programacion = await getCollection("programacion");
                         );
                     })
             }
-            </div>
         </div>
     </section>
 </Layout>

@@ -1,22 +1,26 @@
 ---
-import "./HotelCard.css"
+import "./HotelCard.css";
 
 interface Props {
-    title: string;
-    direccion: string;
-    imagen: string;
-    slug: string;
+  title: string;
+  imagen: string;
+  slug: string;
+  tipo: string;
 }
-const { title, direccion, imagen, slug } = Astro.props;
+const { title, tipo, imagen, slug } = Astro.props;
 ---
+
 <div class="card-hospedaje">
-  <img src={`/hospedaje/${imagen}`} alt={title} class="card-img">
+  <figure class="card-img-wrapper">
+    <img src={`/hospedaje/${imagen}`} alt={title} class="card-img" />
+    <p class="card-location">
+      <span class="mdi--home-city"></span>
+      {tipo}
+    </p>
+  </figure>
   <div class="card-content">
     <h3 class="card-title">{title}</h3>
-    <p class="card-location">
-      <span class="mdi--location"></span>
-      {direccion}
-    </p>
+
     <a href={`/hospedajes/${slug}`} class="card-btn">Ver más</a>
   </div>
 </div>

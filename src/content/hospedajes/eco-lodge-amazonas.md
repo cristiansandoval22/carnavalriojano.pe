@@ -1,11 +1,30 @@
 ---
-title: "Eco Lodge Amazonas"
-descripcion: "Vive la experiencia en un lodge ecológico en medio de la naturaleza."
-descripcionLong: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. "
-direccion: "Carretera Marginal km 14, Lamas"
-telefono: "+51 911 223 344"
+title: "eco lodge amazonas"
+tipo: "Hospedaje"
+
+# 📝 Descripciones
+descripcion: "Ambiente familiar y natural cerca del río."
+descripcionLong: >
+  El Hostal Angaiza te da la bienvenida a un espacio donde la comodidad, el buen servicio y la tradición se unen para brindarte una experiencia única en el corazón de Rioja. Nos encontramos ubicados estratégicamente en Jr. Angaiza #1160, a pocos minutos de los principales atractivos turísticos y eventos culturales de la ciudad.
+
+# 📍 Información general
+direccion: "Jr. Angaiza #1160"
+telefono: "943050191"
+horarioAtencion: "Atención las 24 horas."
+
+# 📷 Imágenes
 imagen: "hospedaje.png"
-horarioAtencion: "Lunes a sábado: 8:00 a.m. a 6:00 p.m."
+
+galeria:
+  - "/hotel-angaiza/Galeria-1.jpg"
+  - "/hotel-angaiza/Galeria-2.jpg"
+  - "/hotel-angaiza/Galeria-3.jpg"
+  - "/hotel-angaiza/Galeria-4.jpg"
+
+# 🌐 Redes Sociales
+redesSociales:
+  facebook: "https://www.facebook.com/angaiza.hostal?locale=es_LA"
+  instagram: "https://www.instagram.com/angaiza_hostall/"
 ---
 ##  Servicios que ofrece
 

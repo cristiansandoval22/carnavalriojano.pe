@@ -1,5 +1,5 @@
 ---
-title: "casa rioja"
+title: "Hostal Angaiza"
 tipo: "Hostal"
 
 # 📝 Descripciones
@@ -13,7 +13,7 @@ telefono: "943050191"
 horarioAtencion: "Atención las 24 horas."
 
 # 📷 Imágenes
-imagen: "hospedaje.png"
+imagen: "/hotel-angaiza/Hotel-angaiza.jpg"
 
 galeria:
   - "/hotel-angaiza/Galeria-1.jpg"
@@ -27,12 +27,20 @@ redesSociales:
   instagram: "https://www.instagram.com/angaiza_hostall/"
 ---
 
-##  Servicios que ofrece
 
-- Tours al Carnaval Riojano (culturales y nocturnos)  
-- Paquetes turísticos a Lamas, Moyobamba y Alto Mayo  
-- Excursiones a cataratas y reservas naturales  
-- Traslados aeropuerto - hotel  
-- Guías locales certificados  
-- Reservas de hoteles y alojamientos
 
+## 🛏️ Tarifas de habitaciones
+-  **Simple**: S/ 50  
+-  **Matrimonial**: S/ 70  
+-  **Doble**: S/ 100
+
+##  Servicios incluidos 
+-  Baño propio (agua fría y caliente las 24 horas)  
+-  Wifi de ultra velocidad (GRATIS)  
+-  Cochera 24/7 🚗🏍️  
+-  Smart TV con acceso a internet  
+-  Habitaciones completamente amobladas  
+-  Orientación turística  
+
+##  Restaurante
+- Contamos con desayunos, almuerzos y platos a la carta.

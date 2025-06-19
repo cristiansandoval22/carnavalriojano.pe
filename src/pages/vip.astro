@@ -4,12 +4,332 @@ import GoBack from "../components/goBack/goBack.astro";
 ---
 
 <Layout title="Grupo VIP">
-    <section class="section container">
-        <div class="content">
-            <nav>
-                <GoBack text="Volver a inicio" link="/" />
-            </nav>
-            <h1>landing page</h1>
+  <section class="hero__vip section container">
+    <p class="hero__badge">
+      <span class="hugeicons--party"></span>
+      Carnaval 2026
+    </p>
+    <h1 class="section__title hero__vip-title">
+      ¡Vive el <span class="section__title-span">Carnaval Riojano</span>
+      como nunca antes!
+    </h1>
+    <p class="hero__vip-description">
+      Únete al grupo privado, recibe la ubicación de los Diablos de Rioja en
+      tiempo real y accede a sorteos exclusivos.
+    </p>
+    <div class="hero__buton">
+      <button
+      onclick="document.getElementById('elige-tu-plan').scrollIntoView({ behavior: 'smooth' })"
+      class="hero__vip-button"
+    >
+      Quiero unirme al grupo
+    </button>
+    </div>
+    <!-- <a href="#elige-tu-plan" class="hero__vip-button">Quiero unirme al grupo</a> -->
+    <div class="hero__vip-cards">
+      <div class="hero__vip-card">
+        <div class="hero__vip-card-icon">
+          <span class="tabler--users"></span>
         </div>
-    </section>
+        <h4>Grupo Exclusivo</h4>
+        <p>Acceso a comunidad privada de WhatsApp</p>
+      </div>
+
+      <div class="hero__vip-card">
+        <div class="hero__vip-card-icon">
+          <span class="mdi--location"></span>
+        </div>
+        <h4>Ubicación en Tiempo Real</h4>
+        <p>Sigue a los Diablos de Rioja durante todo el evento</p>
+      </div>
+
+      <div class="hero__vip-card">
+        <div class="hero__vip-card-icon">
+          <span class="mdi--gift-outline"></span>
+        </div>
+        <h4>Sorteos Exclusivos</h4>
+        <p>Accede a sorteos exclusivos</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="elige-tu-plan" class="elige-tu-plan section container">
+    <h2 class="plan-title">¡Vive el Carnaval Riojano al máximo!</h2>
+    <p class="plan-description">
+      Inscríbete y forma parte del evento más esperado del año. Compra tus
+      tickets adicionales y aumenta tus oportunidades de ganar increíbles
+      premios. ¡Cada ticket es una nueva oportunidad de vivir el carnaval al
+      máximo!
+    </p>
+    <div class="plan-cards">
+      <div class="plan-card plan-card--primary">
+        <div class="plan-card__header">
+          <h3 class="plan-card__title">Plan Premium</h3>
+          <p class="plan-card__subtitle">Acceso esencial al carnaval</p>
+          <div class="plan-card__price plan-card__price--primary">
+            S/10.00 <span>único pago</span>
+          </div>
+        </div>
+        <div class="plan-card__content">
+          <ul class="plan-card__list">
+            <li class="plan-card__item">
+              <span class="material-symbols--check-rounded"></span>
+              <p>Acceso al grupo privado de WhatsApp</p>
+            </li>
+            <li class="plan-card__item">
+              <span class="material-symbols--check-rounded"></span>
+              <p>Ubicación de los Diablos de Rioja en tiempo real</p>
+            </li>
+            <li class="plan-card__item">
+              <span class="material-symbols--check-rounded"></span>
+              <p>Participación en sorteos exclusivos</p>
+            </li>
+          </ul>
+        </div>
+        <div class="plan-card__footer">
+          <a class="plan-card__button" href="/inscripcion">
+            Seleccionar Plan Premium
+          </a>
+        </div>
+      </div>
+
+      <div class="plan-card plan-card--secondary">
+        <div class="plan-card__header">
+          <h3 class="plan-card__title">Tickets Adicionales</h3>
+          <p class="plan-card__subtitle">Más oportunidades para ganar</p>
+          <div class="plan-card__price plan-card__price--secondary">
+            S/5.00 <span>por ticket</span>
+          </div>
+        </div>
+        <div class="plan-card__content">
+          <ul class="plan-card__list">
+            <li class="plan-card__item">
+              <span class="material-symbols--check-rounded"></span>
+              <p>Más oportunidades para ganar en el sorteo</p>
+            </li>
+            <li class="plan-card__item">
+              <span class="material-symbols--check-rounded"></span>
+              <p>Se compran después del registro inicial</p>
+            </li>
+            <li class="plan-card__item">
+              <span class="material-symbols--check-rounded"></span>
+              <p>Se pueden acumular sin límite</p>
+            </li>
+          </ul>
+        </div>
+        <div class="plan-card__footer">
+          <a class="plan-card__button" href="/ticket"> Seleccionar Tickets </a>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>
+
+<style>
+  .section__title-span {
+    color: #dc2626;
+  }
+
+  .hero__badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #fef3c7;
+    padding: 0.5rem;
+    width: fit-content;
+    border-radius: 50px;
+    color: #92400e;
+  }
+  
+  .hero__vip-button {
+    font-size: var(--fs-medium);
+    border: none;
+    background-color: #dc2626;
+    width: fit-content;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    color: #fff;
+    transition: 0.3s;
+  }
+
+  .hero__vip-cards {
+    display: grid;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .hero__vip-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-align: center;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    border-radius: 1rem;
+    transition: 0.3s;
+  }
+  .hero__vip-card h4,
+  .hero__vip-card p {
+    margin: 0;
+    text-wrap: balance;
+  }
+  .hero__vip-card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #dc2626;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 50%;
+  }
+  .hero__vip-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+  }
+
+  .plan-card {
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    transition: 0.3s;
+    background-color: white;
+    margin-top: 2rem;
+  }
+
+  .plan-card__header {
+    padding: 1rem;
+  }
+
+  .plan-card__title {
+    margin: 0;
+  }
+
+  .plan-card__subtitle {
+    margin: 0;
+    font-size: var(--fs-small);
+  }
+
+  .plan-card__price {
+    font-weight: bold;
+    margin-top: 0.5rem;
+  }
+
+  .plan-card__price span {
+    margin-left: 0.25rem;
+    font-size: var(--fs-small);
+    color: var(--color-text-p);
+  }
+
+  .plan-card__content {
+    padding: 1rem;
+  }
+
+  .plan-card__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0;
+    margin: 0;
+  }
+
+  .plan-card__item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .plan-card__item p {
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .plan-card__footer {
+    padding: 1rem;
+  }
+
+  .plan-card__button {
+    width: 100%;
+    padding: 0.75rem;
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    text-align: center;
+  }
+
+  .plan-card__button:hover {
+    background-color: #1e40af;
+  }
+
+  /* Modificadores */
+  .plan-card--primary .plan-card__header {
+    background-color: #fffbeb;
+  }
+
+  .plan-card--primary .plan-card__title,
+  .plan-card__price,
+  .plan-card--primary .plan-card__content span {
+    color: #b45309;
+  }
+
+  .plan-card--secondary .plan-card__header {
+    background-color: #eff6ff;
+  }
+
+  .plan-card--secondary .plan-card__title,
+  .plan-card__price--secondary,
+  .plan-card--secondary .plan-card__content span {
+    color: #2563eb;
+  }
+
+  .plan-card--primary .plan-card__button {
+    background-color: #b45309;
+  }
+
+  .plan-card--secondary .plan-card__button {
+    background-color: #2563eb;
+  }
+  .plan-title {
+    color: purple;
+  }
+
+  @media (min-width: 768px) {
+    .hero__vip {
+      padding: 8rem;
+    }
+
+    .hero__vip-title,
+    .hero__vip-description {
+      text-align: center;
+    }
+    .hero__vip-button {
+      text-align: center;
+      margin: 0 auto;
+    }
+    .hero__badge {
+      margin: 0 auto;
+    }
+    .hero__vip-cards {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .plan-cards {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+    }
+    .plan-title,
+    .plan-description {
+      text-align: center;
+    }
+    .hero__buton{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  }
+</style>
