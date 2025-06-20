@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import GoBack from "../../components/goBack/goBack.astro";
 import AgencyCard from "../../components/agencia/agencyCard/AgencyCard.astro";
+import Sponsors from "../../components/sponsors/sponsors.astro";
 
 import { getCollection } from "astro:content";
 
@@ -34,4 +35,5 @@ const agencias = await getCollection("agencias");
             
         </div>
     </section>
+    <Sponsors />
 </Layout>

@@ -1,9 +1,10 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import GoBack from "../../components/goBack/goBack.astro";
+import Sponsors from "../../components/sponsors/sponsors.astro";
 ---
 
-<Layout title="formulario de Tickets">
+<Layout title="Carnaval Riojano - Tickets Adicionales">
   <section class="ticket section container">
     <GoBack text="Volver" link="/vip" />
     <h1 class="ticket__title">Tickets Adicionales</h1>
@@ -14,14 +15,18 @@ import GoBack from "../../components/goBack/goBack.astro";
     </p>
 
     <div class="ticket__container">
-      
-      <div class="ticket__info"> 
+      <div class="ticket__info">
         <div class="ticket__image-container">
           <img class="ticket__image" src="/ticket-img.jpg" alt="" />
         </div>
         <div class="ticket__important">
-          ⚠️ <strong>Importante:</strong> Al completar este formulario, estás aceptando los 
-          <a href="/vip/terminos" target="_blank" class="ticket__important-link">Términos y Condiciones</a> del evento.
+          <strong>Importante:</strong> Al completar este formulario, estás aceptando
+          los
+          <a
+            href="/terminos-y-condiciones"
+            target="_blank"
+            class="ticket__important-link">Términos y Condiciones</a
+          > del evento.
         </div>
       </div>
       <div class="ticket__iframe-container">
@@ -46,9 +51,10 @@ import GoBack from "../../components/goBack/goBack.astro";
       </div>
     </div>
   </section>
+  <Sponsors />
   <section class="footer__buttons">
     <GoBack text="Volver" link="/vip" />
-    <GoBack text="Terminos y Condiciones" link="/terminos-y-condiciones" />
+
   </section>
 </Layout>
 <script src="https://api.bysness.pe/js/form_embed.js"></script>
@@ -59,7 +65,7 @@ import GoBack from "../../components/goBack/goBack.astro";
     gap: 1rem;
     margin-bottom: 1rem;
   }
-  .ticket__container{
+  .ticket__container {
     margin-top: 2rem;
   }
   .ticket {
@@ -76,7 +82,7 @@ import GoBack from "../../components/goBack/goBack.astro";
     font-size: 0.95rem;
   }
   .ticket__important-link {
-    color: #0a00f3;
+    color: var(--color-primary);
     font-weight: bold;
     display: inline-flex;
   }

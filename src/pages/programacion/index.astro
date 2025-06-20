@@ -2,7 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import GoBack from "../../components/goBack/goBack.astro";
 import DayScheduleCard from "../../components/programacion/DayScheduleCard/DayScheduleCard.astro";
-
+import Sponsors from "../../components/sponsors/sponsors.astro";
 import { getCollection } from "astro:content";
 
 const programacion = await getCollection("programacion");
@@ -19,7 +19,7 @@ const programacion = await getCollection("programacion");
                     .sort((a, b) => a.data.id - b.data.id) // 👈 orden manual
                     .map((day) => {
                         const { slug, data } = day;
-                        const { title, activities, date } = data;
+                        const { title, activities } = data;
 
                         return (
                             <div class="swiper-slide">
@@ -34,4 +34,5 @@ const programacion = await getCollection("programacion");
             }
         </div>
     </section>
+    <Sponsors />
 </Layout>

@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import GoBack from "../../components/goBack/goBack.astro";
 import ReinaCard from "../../components/reinas/reina-card/ReinaCard.astro";
+import Sponsors from "../../components/sponsors/sponsors.astro";
 import { getCollection } from "astro:content";
 
 const reinas = await getCollection("reinas");
@@ -9,7 +10,9 @@ const reinas = await getCollection("reinas");
 
 <Layout title="Programación del Carnaval Riojano 2025">
     <section class="section container">
-        <div class="content">
+        <nav class="headers__buttons">
+            <GoBack text="Volver a inicio" link="/" />
+        </nav>
             <div class="grid__reinas">
                 {
                     reinas.map((reina) => {
@@ -53,6 +56,6 @@ const reinas = await getCollection("reinas");
                     })
                 }
             </div>
-        </div>
     </section>
+    <Sponsors />
 </Layout>

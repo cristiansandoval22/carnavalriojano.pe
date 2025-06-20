@@ -1,19 +1,18 @@
-.brands {
-    position: relative;
-    background: var(--color-bg);
-    z-index: 1;
-    padding: 1rem 0;
-}
 
-.inner-container {
+  .echofy-text-section {
+    position: relative;
+    z-index: 1;
+  }
+
+  .echofy-text-section .inner-container {
     max-width: 1812px;
     margin: 0 auto;
-}
+  }
 
-.marquee {
+  .echofy-text-section .marquee {
     position: relative;
     --duration: 15s;
-    --gap: 1rem;
+    --gap: 0px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -22,11 +21,10 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    gap: var(--gap);
-    animation-play-state: running;
-}
+    gap: 0px;
+  }
 
-.marquee-block {
+  .echofy-text-section .marquee-block {
     -ms-flex-negative: 0;
     flex-shrink: 0;
     display: -webkit-box;
@@ -37,26 +35,48 @@
     align-items: center;
     -ms-flex-pack: distribute;
     justify-content: space-around;
-    gap: var(--gap);
+    gap: 0;
     min-width: 87%;
     -webkit-animation: scroll var(--duration) linear infinite;
     animation: scroll var(--duration) linear infinite;
+  }
 
-}
-.marquee:hover .marquee-block {
-  animation-play-state: paused;
-}
+  .echofy-text-section .marquee-block .content-box {
+    position: relative;
+    margin-right: 0px;
+  }
 
-.content-box img{
-    max-width: 150px;
-}
+  .echofy-text-section .marquee-block .content-box:last-child {
+    margin-right: 0px;
+  }
 
-@keyframes scroll {
+  .echofy-text-section .marquee-block .content-box:last-child::before {
+    display: none;
+  }
+
+  .echofy-text-section .marquee-block .content-box img {
+    position: relative;
+    left: -49px;
+    width: 150px;
+  }
+
+  @-webkit-keyframes scroll {
     0% {
-        transform: translateX(0);
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
     }
-
     100% {
-        transform: translateX(calc(-100% - 1rem));
+      -webkit-transform: translateX(calc(-100% - var(--gap)));
+      transform: translateX(calc(-100% - var(--gap)));
     }
-}
+  }
+  @keyframes scroll {
+    0% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(calc(-100% - var(--gap)));
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }

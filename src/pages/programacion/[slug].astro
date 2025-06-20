@@ -1,7 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import GoBack from "../../components/goBack/goBack.astro";
-
+import Sponsors from "../../components/sponsors/sponsors.astro";
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
@@ -13,7 +13,7 @@ export async function getStaticPaths() {
 }
 const { programacion } = Astro.props;
 const { data } = programacion;
-const { title, activities, date } = data;
+const { title, activities } = data;
 
 const { Content } = await render(programacion);
 ---
@@ -25,7 +25,12 @@ const { Content } = await render(programacion);
                 <GoBack text="Volver a inicio" link="/" />
                 <GoBack text="Ver programación" link="/programacion" />
             </nav>
-            <h1>programacion {title}</h1>
+            <h1>{title}</h1>
+
+            <div>
+                <Content />
+            </div>
         </div>
     </section>
+    <Sponsors />
 </Layout>

@@ -4,8 +4,8 @@
 
 <style>
   #page-loader {
-  transition: opacity 0.5s ease;
-}
+    transition: opacity 0.5s ease;
+  }
 
   .loader__container {
     position: fixed;
@@ -70,32 +70,4 @@
       }, 500); // 500ms es suficiente
     }
   });
-
-  document.addEventListener("click", (e: MouseEvent) => {
-  const target = e.target as HTMLElement;
-  const anchor = target.closest("a") as HTMLAnchorElement | null;
-
-  if (
-    anchor &&
-    anchor.href &&
-    anchor.target !== "_blank" &&
-    anchor.origin === window.location.origin
-  ) {
-    e.preventDefault();
-
-    const loader = document.getElementById("page-loader");
-
-    if (loader) {
-      // Asegura que el loader esté visible
-      loader.style.display = "flex";
-      // Forzar reflow para asegurar transición
-      void loader.offsetWidth;
-      loader.style.opacity = "1";
-    }
-
-    setTimeout(() => {
-      window.location.href = anchor.href;
-    }, 1000); // 1 segundo de transición
-  }
-});
 </script>

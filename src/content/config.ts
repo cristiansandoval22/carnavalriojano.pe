@@ -32,8 +32,6 @@ const programacion = defineCollection({
     title: z.string(),
     activities: z.string(),
 
-    // 📅 Fecha del evento
-    date: z.date(),
   }),
 });
 
@@ -80,4 +78,14 @@ const hospedajes = defineCollection({
     }).optional(),
   }),
 });
-export const collections = { reinas, programacion, agencias, hospedajes };
+
+
+const sponsors = defineCollection({
+  type: "data",
+  schema: z.object({
+    name: z.string(),
+    url: z.string().url(),
+    logo: z.string()
+  })
+});
+export const collections = { reinas, programacion, agencias, hospedajes, sponsors };

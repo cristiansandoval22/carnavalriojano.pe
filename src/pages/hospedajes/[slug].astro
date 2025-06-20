@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import GoBack from "../../components/goBack/goBack.astro";
+import Sponsors from "../../components/sponsors/sponsors.astro";
 
 import { getCollection, render } from "astro:content";
 
@@ -119,6 +120,7 @@ const whatsappUrl = `https://api.whatsapp.com/send?phone=+51${telefono}&text=${m
                 }
             </div>
         </section>  
+        <Sponsors />
 
         <nav class="headers__buttons">
             <GoBack text="Volver a inicio" link="/" />

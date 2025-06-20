@@ -1,93 +1,51 @@
 ---
-import './PartnerCarousel.css'
+import { getCollection } from "astro:content";
+import "./PartnerCarousel.css";
+const sponsors = await getCollection("sponsors");
 
-const sponsors = [
-    {
-        name: "Sabores Nauticos",
-        url: "https://www.saboresnauticos.com/",
-        logo: "sponsor-sabores-nauticos.png",
-    },
-    {
-        name: "Sabores Nauticos",
-        url: "https://www.saboresnauticos.com/",
-        logo: "sponsor-sabores-nauticos.png",
-    },
-    {
-        name: "Sabores Nauticos",
-        url: "https://www.saboresnauticos.com/",
-        logo: "sponsor-sabores-nauticos.png",
-    },
-    {
-        name: "Sabores Nauticos",
-        url: "https://www.saboresnauticos.com/",
-        logo: "sponsor-sabores-nauticos.png",
-    },
-    {
-        name: "Sabores Nauticos",
-        url: "https://www.saboresnauticos.com/",
-        logo: "sponsor-sabores-nauticos.png",
-    },
-    {
-        name: "Sabores Nauticos",
-        url: "https://www.saboresnauticos.com/",
-        logo: "sponsor-sabores-nauticos.png",
-    },
-];
+
+
+
+
+
+
+
 
 ---
 
+<section class="echofy-text-section" data-cues="zoomIn">
+  <div class="inner-container">
+    <div class="marquee">
+      <div class="marquee-block">
 
-
-<section class="brands section" data-cues="zoomIn">
-    <div class="inner-container">
-      <div class="marquee">
-        <div class="marquee-block">
-          <!-- content-box -->
-          <a href="#" target="_blank" class="content-box">
-            <img src="/sponsors/sponsor-sabores-nauticos.png" alt="Logo sabores nauticos" />
-          </a>
-          <!-- content-box -->
-          <a href="#" target="_blank"  class="content-box">
-            <img src="/sponsors/sponsor-vareli.png" alt="Logo vareli" />
-          </a>
-          <!-- content-box -->
-          <a href="#" target="_blank" class="content-box">
-           <img src="/sponsors/sponsor-negocio.png" alt="Logo sabores nauticos" />
-          </a>
-          <!-- content-box -->
-          <a href="#" target="_blank" class="content-box">
-           <img src="/sponsors/sponsor-migos-servis.jpg" alt="Logo vareli" />
-          </a>
-          <!-- content-box -->
-          <a href="#" target="_blank" class="content-box">
-           <img src="/sponsors/sponsor-sabores-nauticos.png" alt="Logo sabores nauticos" />
-          </a>
-        </div>
-        <div class="marquee-block">
-          <!-- content-box -->
-          <a href="#" target="_blank" class="content-box">
-            <img src="/sponsors/sponsor-migos-servis.jpg" alt="Logo vareli" />
-          </a>
-          <!-- content-box -->
-          <a href="#" target="_blank" class="content-box">
-           <img src="/sponsors/sponsor-sabores-nauticos.png" alt="Logo sabores nauticos" />
-          </a>
-          <!-- content-box -->
-          <a href="#" target="_blank" class="content-box">
-           <img src="/sponsors/sponsor-vareli.png" alt="Logo vareli" />
-          </a>
-          <!-- content-box -->
-          <a href="#" target="_blank" class="content-box">
-           <img src="/sponsors/sponsor-negocio.png" alt="Logo sabores nauticos" />
-          </a>
-          <!-- content-box -->
-          <a href="#" target="_blank" class="content-box">
-            <img src="/sponsors/sponsor-migos-servis.jpg" alt="Logo vareli" />
-          </a>
-        </div>
+        {
+          sponsors.map((sponsor) => {
+            const { data } = sponsor;
+            return (
+              <div class="content-box">
+                <a href={data.url} target="_blank">
+                  <img src={data.logo} alt={data.name} />
+                </a>
+              </div>
+            );
+          })
+        } 
+      </div>
+      
+      <div class="marquee-block">
+        {
+          sponsors.map((sponsor) => {
+            const { data } = sponsor;
+            return (
+              <div class="content-box">
+                <a href={data.url} target="_blank">
+                  <img src={data.logo} alt={data.name} />
+                </a>
+              </div>
+            );
+          })
+        }
       </div>
     </div>
-
-  </section>
-
-
+  </div>
+</section>
