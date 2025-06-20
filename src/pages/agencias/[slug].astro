@@ -1,7 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import GoBack from "../../components/goBack/goBack.astro";
-
+import Sponsors from "../../components/sponsors/sponsors.astro";
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
@@ -27,7 +27,7 @@ const { Content } = await render(agencia);
         </nav>
 
         <h1>{title}</h1>
-
+        <Sponsors />
         <nav class="headers__buttons">
             <GoBack text="Volver a inicio" link="/" />
             <GoBack text="Ver todas las agencias" link="/agencias" />

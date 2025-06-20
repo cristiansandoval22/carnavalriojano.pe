@@ -2,7 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import GoBack from "../../components/goBack/goBack.astro";
 import HotelCard from "../../components/hospedaje/HotelCard/HotelCard.astro";
-
+import Sponsors from "../../components/sponsors/sponsors.astro";
 import { getCollection } from "astro:content";
 
 const hospedajes = await getCollection("hospedajes");
@@ -35,4 +35,5 @@ const hospedajes = await getCollection("hospedajes");
             
         </div>
     </section>
+    <Sponsors />
 </Layout>

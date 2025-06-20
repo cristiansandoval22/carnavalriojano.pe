@@ -7,6 +7,7 @@ import GoBack from "../components/goBack/goBack.astro";
 import ScheduleCarousel from "../components/programacion/ScheduleCarousel/ScheduleCarousel.astro";
 import AgencyCarousel from "../components/agencia/agencyCarousel/agencyCarousel.astro";
 import HotelCarousel from "../components/hospedaje/hotelCarousel/HotelCarousel.astro";
+import Sponsors from "../components/sponsors/sponsors.astro";
 const reinas = await getCollection("reinas");
 ---
 
@@ -167,15 +168,5 @@ const reinas = await getCollection("reinas");
         </div>
     </section>
 
-    <!-- <section class="programacion section container">
-        <h2 class="section__title galeria__title">
-           Galería del Carnaval
-        </h2>
-        <p class="galeria__subtitle">
-            Revive los mejores momentos del Carnaval Riojano a través de imágenes 
-            llenas de color, tradición y alegría. Comparte nuestra cultura
-            y siente el espíritu de los Diablos de Rioja en cada foto.
-        </p>
-        
-    </section> -->
+    <Sponsors />
 </Layout>
