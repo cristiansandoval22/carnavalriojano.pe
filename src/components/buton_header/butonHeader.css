@@ -8,6 +8,7 @@
   background: radial-gradient(circle 80px at 80% -10%, #ffffff, #181b1b);
   position: relative;
   width: max-content;
+  user-select: none;
 }
 .button::after {
   content: "";

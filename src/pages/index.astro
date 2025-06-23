@@ -4,14 +4,19 @@ import Layout from "../layouts/Layout.astro";
 import PartnerCarousel from "../components/PartnerCarousel/PartnerCarousel.astro";
 import ReinaCarousel from "../components/reinas/Reinas-carousel/ReinasCarousel.astro";
 import GoBack from "../components/goBack/goBack.astro";
-import ScheduleCarousel from "../components/programacion/ScheduleCarousel/ScheduleCarousel.astro";
-import AgencyCarousel from "../components/agencia/agencyCarousel/agencyCarousel.astro";
-import HotelCarousel from "../components/hospedaje/hotelCarousel/HotelCarousel.astro";
 import Sponsors from "../components/sponsors/sponsors.astro";
+import Carousel from "../components/carousel/carousel.astro";
+import AgencyCard from "../components/agencia/agencyCard/AgencyCard.astro";
+import ScheduleCard from "../components/programacion/DayScheduleCard/DayScheduleCard.astro";
 const reinas = await getCollection("reinas");
+const agencias = await getCollection("agencias");
+const hospedajes = await getCollection("hospedajes");
+const programacion = await getCollection("programacion");
+
 ---
 
 <Layout title="Carnaval Riojano 2026 – Cultura y tradición">
+    <!-- hero section -->
     <section class="hero section container">
         <div class="hero__content">
             <h1 class="section__title">
@@ -43,12 +48,15 @@ const reinas = await getCollection("reinas");
                 class="hero__image-img"
                 src="/hero-img.jpg"
                 alt="Carnaval Riojano 2025"
+                loading="lazy"
             />
         </div>
     </section>
 
+    <!-- partner carousel -->
     <PartnerCarousel />
 
+    <!-- about section -->
     <section class="about section container">
         <div class="about__container">
             <div class="about__content">
@@ -86,43 +94,34 @@ const reinas = await getCollection("reinas");
                         class="about__image"
                         src="/diablos-de-rioja-foto.jpg"
                         alt="diblos de rioja en la plaza de armas"
+                        loading="lazy"
                     />
                     <img
                         class="about__image"
                         src="/plaza-de-armas-presentacion.jpg"
                         alt="presentacion de los Diblos en la plaza de armas"
+                        loading="lazy"
+                        loading="lazy"
                     />
                     <img
                         class="about__image"
                         src="/reinas-prof-ronald.jpg"
                         alt="reinas del carnaval riojano junto al ño carnavalon de ronald sandoval 2025 "
+                        loading="lazy"
+                        loading="lazy"
                     />
                     <img
                         class="about__image"
                         src="/turista-y-diablo.jpg"
                         alt="Turísta disfrutando del carnaval riojano junto a un diblo de rioja"
+                        loading="lazy"
                     />
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="programacion section container">
-        <h2 class="section__title programacion__title">
-            Programación Oficial del Carnaval Riojano 2026
-        </h2>
-        <p class="programacion__subtitle">
-            Descubre todo lo que hemos preparado para ti. Explora día por día
-            las actividades del carnaval: desfiles, concursos, presentaciones
-            culturales y mucho más. ¡No te pierdas ningún momento de esta fiesta
-            inolvidable en Rioja!
-        </p>
-        <ScheduleCarousel />
-        <div class="btn-wrapper">
-            <GoBack text="Ver programación" link="/programacion" />
-        </div>
-    </section>
-
+    <!-- reina section -->
     <section class="reinas section container">
         <h2 class="section__title reina__title">
             Candidatas a Reina del Carnaval Riojano 2026
@@ -137,36 +136,6 @@ const reinas = await getCollection("reinas");
         </div>
     </section>
 
-    <section class="programacion section container">
-        <h2 class="section__title agencias__title">
-            Agencias de viaje
-        </h2>
-        <p class="agencias__subtitle">
-            Descubre agencias que te ayudan a planear tu viaje al Carnaval Riojano. 
-            Conoce opciones confiables que ofrecen paquetes y servicios para disfrutar 
-            al máximo esta gran celebración.
-        </p>
-        <AgencyCarousel />
-
-        <div class="btn-wrapper">
-            <GoBack text="ver todas las agencias" link="/agencias" />
-        </div>
-    </section>
-
-    <section class="programacion section container">
-        <h2 class="section__title hospedajes__title">
-            Alojamientos para tu estadía
-        </h2>
-        <p class="hospedajes__subtitle">
-            Encuentra opciones de alojamiento para todos los gustos y presupuestos. 
-            Desde hoteles y hospedajes hasta espacios familiares o alternativos, 
-            vive el Carnaval Riojano con comodidad, seguridad y cercanía a toda la fiesta.
-        </p>
-        <HotelCarousel />
-        <div class="btn-wrapper">
-            <GoBack text="ver todos los hospedajes" link="/hospedajes" />
-        </div>
-    </section>
-
+    <!-- sponsors section -->
     <Sponsors />
 </Layout>

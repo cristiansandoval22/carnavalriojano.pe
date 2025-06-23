@@ -16,6 +16,7 @@ const { title, descripcion, imagen, slug } = Astro.props;
         src={`/agencias/${imagen}`}
         alt={title}
         class="card-img"
+        loading="lazy"
     />
     <div class="card-content">
         <h3 class="card-title">{title}</h3>

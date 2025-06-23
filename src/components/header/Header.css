@@ -22,6 +22,7 @@
 }
 .nav__logo {
     width: 70px; 
+    user-select: none;
 }
 
 @media (max-width: 1150px) {

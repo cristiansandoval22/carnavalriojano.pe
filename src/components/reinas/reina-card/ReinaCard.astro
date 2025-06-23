@@ -1,35 +1,96 @@
 ---
-import "./reina-card.css";
+// import "./reina-card.css";
 
 interface Props {
-    reinaImg: string;
-    reinaName: string;
-    reinaBarrio: string;
-    reinaEdad: number;
-    reinaProfesion: string;
-    slug: string;
+  reinaImg: string;
+  reinaName: string;
+  reinaBarrio: string;
+  reinaEdad: number;
+  reinaProfesion: string;
+  slug: string;
 }
 
 const { reinaImg, reinaName, reinaBarrio, reinaEdad, reinaProfesion, slug } =
-    Astro.props;
-
+  Astro.props;
 ---
 
-<a class="reina__card__link" href={`/reinas/${slug}`}>
-    <article class="reina__card">
-        <figure class="reina__card__image">
-            <img
-                src={`/reinas/${reinaImg}`}
-                alt= {`Candidata del ${reinaBarrio} - ${reinaName}`}
-            />
-        </figure>
+<a href={`/reinas/${slug}`} class="reina__card__link">
+  <article class="reina__card">
+    <img
+      class="reina__card__image"
+      src={`/reinas/${reinaImg}`}
+      alt={reinaName}
+      loading="lazy"
+    />
 
-        <div class="reina__card__content">
-            <h3 class="reina__card__name">{reinaName}</h3>
-            <p class="reina__card__barrio">{reinaBarrio}</p>
-            <p class="reina__card__Profesion">
-                {`${reinaEdad} años • ${reinaProfesion}`}
-            </p>
-        </div>
-    </article>
+    <div class="overlay">
+      <h3 class="reina__card__name">{reinaName}</h3>
+      <p class="reina__card__barrio">{reinaBarrio}</p>
+    </div>
+  </article>
 </a>
+
+<style>
+  .reina__card__link {
+    max-width: fit-content;
+    user-select: none;
+  }
+  .reina__card {
+    position: relative;
+    max-width: 300px;
+    aspect-ratio: 3/5;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  .reina__card:hover {
+    transform: scale(0.95) rotateZ(1.7deg);
+  }
+
+  .reina__card__image {
+    border-radius: inherit;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+
+  /* .reina__card:hover .reina__card__image {
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.05);
+  } */
+  .overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, transparent, #c300ff94);
+    border-radius: inherit;
+  }
+  .reina__card__name {
+    margin: 0;
+    position: absolute;
+    bottom: 50px;
+    left: 10px;
+    color: #fff;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  .reina__card__barrio {
+    margin: 0;
+    position: absolute;
+    left: 10px;
+    bottom: 15px;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid #fff;
+    border-radius: 12px;
+    padding: 5px 15px;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+</style>
