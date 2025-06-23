@@ -1,34 +1,15 @@
 ---
-import { getCollection } from "astro:content";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import ReinaCard from "../reina-card/ReinaCard.astro";
 
-const reinas = await getCollection("reinas");
+
 ---
 
 <section class="slide__reinas container">
   <div class="swiper">
     <div class="swiper-wrapper">
-      {
-        reinas.map((reina) => {
-          const { slug, data } = reina;
-          const { title, edad, profesion, imagenPrincipal, barrio } = data;
-          return (
-            <div class="swiper-slide">
-              <ReinaCard
-                reinaImg={imagenPrincipal}
-                reinaName={title}
-                reinaBarrio={barrio}
-                reinaEdad={edad}
-                reinaProfesion={profesion}
-                slug={slug}
-              />
-            </div>
-          );
-        })
-      }
+      <slot/>
     </div>
     <!-- If we need pagination -->
     <div class="swiper-pagination"></div> 
@@ -58,10 +39,7 @@ const reinas = await getCollection("reinas");
       el: ".swiper-pagination",
       clickable: true,
     },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
+    
     breakpoints: {
       640: {
         slidesPerView: 2,
@@ -80,23 +58,14 @@ const reinas = await getCollection("reinas");
 </script>
 
 <style>
-  .
   .slide__reinas {
     margin: 0 auto;
   }
   .swiper-wrapper {
     padding-block: 3rem;
-    transition: all 0.3s ease;
-  }
-  .swiper-wrapper:hover .swiper-slide:not(:hover) {
-    transition: all 0.3s ease;
-    -webkit-filter: grayscale(1);
-    filter: grayscale(1);
-    
   }
   .swiper-slide {
     width: 80%;
-    max-width: 300px;
     margin: 0;
   }
   .swiper-pagination-bullet-active {

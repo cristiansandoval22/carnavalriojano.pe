@@ -41,6 +41,8 @@
     animation: scroll var(--duration) linear infinite;
   }
 
+ 
+
   .echofy-text-section .marquee-block .content-box {
     position: relative;
     margin-right: 0px;
@@ -59,6 +61,7 @@
     left: -49px;
     width: 150px;
   }
+
 
   @-webkit-keyframes scroll {
     0% {
