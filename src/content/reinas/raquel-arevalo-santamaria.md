@@ -1,9 +1,10 @@
 ---
-title: "Raquel Arevalo"
+nombreCorto: "Raquel Arevalo"
+nombreCompleto: "Raquel Arevalo Santamaria"
 barrio: "Palmeras"
 edad: 22
 profesion: "Estudiante de Derecho"
-imagenPrincipal: "Raquel-Arévalo-Santamaría.jpg"
+imagenPrincipal: "/palmeras/Raquel-Arévalo-Santamaría.jpg"
 galeria:
   - "foto1.jpg"
   - "foto2.jpg"

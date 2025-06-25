@@ -9,31 +9,28 @@ import { getCollection } from "astro:content";
 const agencias = await getCollection("agencias");
 ---
 
-<Layout title="agencias del Carnaval Riojano 2025">
-    <section class="section container">
-        <div class="content">
-            <nav>
-                <GoBack text="Volver a inicio" link="/" />
-            </nav>
-            <div class="grid__agencias">
-                {
-                agencias.map((agencia) => {
-                    const { slug, data } = agencia;
-                    const { title, descripcion, imagen } = data;
+<Layout title="Agencias del Carnaval Riojano 2026">
+  <section class="section container">
+    <nav>
+      <GoBack text="Volver a inicio" link="/" />
+    </nav>
+    <div class="grid__agencias">
+      {
+        agencias.map((agencia) => {
+          const { slug, data } = agencia;
+          const { title, descripcion, imagen } = data;
 
-                    return (
-                        <AgencyCard
-                            title={title}
-                            descripcion={descripcion}
-                            imagen={imagen}
-                            slug={slug}
-                        />
-                    );
-                })
-            }
-            </div>
-            
-        </div>
-    </section>
-    <Sponsors />
+          return (
+            <AgencyCard
+              title={title}
+              descripcion={descripcion}
+              imagen={imagen}
+              slug={slug}
+            />
+          );
+        })
+      }
+    </div>
+  </section>
+  <Sponsors />
 </Layout>

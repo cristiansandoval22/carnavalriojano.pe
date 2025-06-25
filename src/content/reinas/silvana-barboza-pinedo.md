@@ -1,9 +1,10 @@
 ---
-title: "Silvana Barboza"
+nombreCorto: "Silvana Barboza"
+nombreCompleto: "Silvana Barboza Pinedo"
 barrio: "Atahualpa"
 edad: 22
 profesion: "Estudiante de Derecho"
-imagenPrincipal: "Silvana-Barboza-Pinedo.jpg"
+imagenPrincipal: "/atahualpa/Silvana-Barboza-Pinedo.jpg"
 galeria:
   - "foto1.jpg"
   - "foto2.jpg"

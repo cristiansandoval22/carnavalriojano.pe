@@ -3,72 +3,115 @@ import { getCollection } from "astro:content";
 const sponsors = await getCollection("sponsors");
 ---
 
-
 <section class="sponsors section container">
+  <h2 class="section__title sponsors__title">Patrocinadores</h2>
+  <p class="sponsors__subtitle">
+    Este proyecto puede llevarse a cabo gracias a la colaboración de…
+  </p>
 
-    <h2 class="section__title sponsors__title">Patrocinadores</h2>
-    <p class="sponsors__subtitle">Este proyecto puede llevarse a cabo gracias a la colaboración de…</p>
-
-
-    <div class="sponsors__content">
+  <div class="sponsors__content">
     {
-        sponsors.map((sponsor) => {
-            const { data } = sponsor;
-            return (
-                <div class="sponsors__content-box">
-                    <a class="sponsors__content-link" href={data.url} target="_blank">
-                        <img class="sponsors__content-img" src={data.logo} alt={data.name} loading="lazy" />
-                    </a>
-                </div>
-            );
-        })
+      sponsors.map((sponsor) => {
+        const { data } = sponsor;
+        return (
+          <div class="sponsors__content-box">
+            <a class="sponsors__content-link" href={data.url} target="_blank">
+              <img
+                class="sponsors__content-img"
+                src={data.logo1}
+                alt={data.name}
+                loading="lazy"
+              />
+              <span class="tooltip__sponsors">{data.name}</span>
+            </a>
+          </div>
+        );
+      })
     }
-    </div>
-
+  </div>
 </section>
 
 <style>
-    .sponsors__title,
-    .sponsors__subtitle{
-        text-align: center
+  .sponsors__title,
+  .sponsors__subtitle {
+    text-align: center;
+  }
+  .sponsors__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    justify-content: center;
+    margin: 2rem auto;
+  }
+  .sponsors__content-box {
+    user-select: none;
+    max-width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+  }
+
+  .sponsors__content-box:hover {
+    transform: scale(1.1);
+  }
+  .sponsors__content-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+    /* Mostrar tooltip al hacer hover */
+    .sponsors__content-box {
+        position: relative;
     }
+
+    .sponsors__content-box:hover .tooltip__sponsors {
+        opacity: 1;
+        transform: translateX(-50%) translateY(-4px);
+    }
+  /* Tooltip general */
+  .tooltip__sponsors {
+    position: absolute;
+    bottom: 110%; /* Arriba del logo */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-primary);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease;
+    z-index: 10;
+  }
+
+  /* Flechita del tooltip */
+  .tooltip__sponsors::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: var(--color-primary) transparent transparent transparent;
+  }
+
+  @media (min-width: 464px) {
     .sponsors__content {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-        max-width: 1000px;
-        justify-content: center;
-        margin: 2rem auto;
+      grid-template-columns: repeat(3, 1fr);
     }
-    .sponsors__content-box{
-        user-select: none;
-        max-width: 200px;
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 0 auto;
-        transition: all 0.3s ease;
-    }
+  }
 
-    .sponsors__content-box:hover {
-        transform: scale(1.1);
+  @media (min-width: 768px) {
+    .sponsors__content {
+      grid-template-columns: repeat(5, 1fr);
     }
-    .sponsors__content-img{
-        width: 100%;
-        height: auto;
-        aspect-ratio: 16/9;
-        object-fit: contain;
-    }
-    @media (min-width: 464px) {
-        .sponsors__content {
-            grid-template-columns: repeat(3, 1fr);
-        }
-    }
-
-    @media (min-width: 768px) {
-        .sponsors__content {
-            grid-template-columns: repeat(5, 1fr);
-        }
-    }
+  }
 </style>

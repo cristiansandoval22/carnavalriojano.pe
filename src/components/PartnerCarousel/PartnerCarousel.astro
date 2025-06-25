@@ -24,7 +24,8 @@ const sponsors = await getCollection("sponsors");
             return (
               <div class="content-box">
                 <a href={data.url} target="_blank">
-                  <img src={data.logo} alt={data.name} loading="lazy" />
+                  <img src={data.logo1} alt={data.name} loading="lazy" />
+                  <span class="tooltip">{data.name}</span>  
                 </a>
               </div>
             );
@@ -39,7 +40,8 @@ const sponsors = await getCollection("sponsors");
             return (
               <div class="content-box">
                 <a href={data.url} target="_blank">
-                  <img src={data.logo} alt={data.name} />
+                  <img src={data.logo1} alt={data.name} />
+                  <span class="tooltip">{data.name}</span>  
                 </a>
               </div>
             );

@@ -1,53 +1,323 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import GoBack from "../../components/goBack/goBack.astro";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
-    const reinas = await getCollection("reinas");
-    return reinas.map((reina) => ({
-        params: { slug: reina.slug },
-        props: { reina },
-    }));
+  const reinas = await getCollection("reinas");
+  return reinas.map((reina) => ({
+    params: { slug: reina.slug },
+    props: { reina },
+  }));
 }
 const { reina } = Astro.props;
 const { data } = reina;
-const { title, barrio, edad, profesion, imagenPrincipal } = data;
+const { nombreCompleto, barrio, edad, profesion, imagenPrincipal } = data;
 
 const { Content } = await render(reina);
 ---
 
-<Layout title={title}>
-    <section class="section container">
-        <nav class="headers__buttons">
-            <GoBack text="Volver a inicio" link="/" />
-            <GoBack text="Todas las reinas" link="/reinas" />
-        </nav>
-        <div class="reina__image">
+<Layout title={nombreCompleto}>
+  <section class="section container">
+    <div class="content_reina">
+      
+      <!-- Swiper -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
             <img
-                class="reina__image_img"
-                src={`/reinas/${imagenPrincipal}`}
-                alt={`Reina de Carnaval Riojano 2025 - ${title}`}
+              src="https://scontent.ftnm2-1.fna.fbcdn.net/v/t39.30808-6/480871383_122139231926428428_6895659775536706297_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=f727a1&_nc_ohc=4rc2irWYPy4Q7kNvwFf8hUD&_nc_oc=AdnTwAdk-KViRE3lv-Mf7fnt79Pld_PhuUPldEcUn5rMkVK5E4OOAQV8H0sjJh47jr7D8wyzSGxXvWL1TYMRntKC&_nc_zt=23&_nc_ht=scontent.ftnm2-1.fna&_nc_gid=xwgYz6TGectUK-sv9AOaNQ&oh=00_AfP202smRTmYz2lSBZWFcQGHAnFPpZvAiu7A65RMXUXxeg&oe=6862237E"
+              alt=""
             />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="https://scontent.ftnm2-1.fna.fbcdn.net/v/t39.30808-6/480871383_122139231926428428_6895659775536706297_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=f727a1&_nc_ohc=4rc2irWYPy4Q7kNvwFf8hUD&_nc_oc=AdnTwAdk-KViRE3lv-Mf7fnt79Pld_PhuUPldEcUn5rMkVK5E4OOAQV8H0sjJh47jr7D8wyzSGxXvWL1TYMRntKC&_nc_zt=23&_nc_ht=scontent.ftnm2-1.fna&_nc_gid=xwgYz6TGectUK-sv9AOaNQ&oh=00_AfP202smRTmYz2lSBZWFcQGHAnFPpZvAiu7A65RMXUXxeg&oe=6862237E"
+              alt=""
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="https://scontent.ftnm2-1.fna.fbcdn.net/v/t39.30808-6/480871383_122139231926428428_6895659775536706297_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=f727a1&_nc_ohc=4rc2irWYPy4Q7kNvwFf8hUD&_nc_oc=AdnTwAdk-KViRE3lv-Mf7fnt79Pld_PhuUPldEcUn5rMkVK5E4OOAQV8H0sjJh47jr7D8wyzSGxXvWL1TYMRntKC&_nc_zt=23&_nc_ht=scontent.ftnm2-1.fna&_nc_gid=xwgYz6TGectUK-sv9AOaNQ&oh=00_AfP202smRTmYz2lSBZWFcQGHAnFPpZvAiu7A65RMXUXxeg&oe=6862237E"
+              alt=""
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="https://scontent.ftnm2-1.fna.fbcdn.net/v/t39.30808-6/480871383_122139231926428428_6895659775536706297_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=f727a1&_nc_ohc=4rc2irWYPy4Q7kNvwFf8hUD&_nc_oc=AdnTwAdk-KViRE3lv-Mf7fnt79Pld_PhuUPldEcUn5rMkVK5E4OOAQV8H0sjJh47jr7D8wyzSGxXvWL1TYMRntKC&_nc_zt=23&_nc_ht=scontent.ftnm2-1.fna&_nc_gid=xwgYz6TGectUK-sv9AOaNQ&oh=00_AfP202smRTmYz2lSBZWFcQGHAnFPpZvAiu7A65RMXUXxeg&oe=6862237E"
+              alt=""
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="https://scontent.ftnm2-1.fna.fbcdn.net/v/t39.30808-6/480871383_122139231926428428_6895659775536706297_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=f727a1&_nc_ohc=4rc2irWYPy4Q7kNvwFf8hUD&_nc_oc=AdnTwAdk-KViRE3lv-Mf7fnt79Pld_PhuUPldEcUn5rMkVK5E4OOAQV8H0sjJh47jr7D8wyzSGxXvWL1TYMRntKC&_nc_zt=23&_nc_ht=scontent.ftnm2-1.fna&_nc_gid=xwgYz6TGectUK-sv9AOaNQ&oh=00_AfP202smRTmYz2lSBZWFcQGHAnFPpZvAiu7A65RMXUXxeg&oe=6862237E"
+              alt=""
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="https://scontent.ftnm2-1.fna.fbcdn.net/v/t39.30808-6/480871383_122139231926428428_6895659775536706297_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=f727a1&_nc_ohc=4rc2irWYPy4Q7kNvwFf8hUD&_nc_oc=AdnTwAdk-KViRE3lv-Mf7fnt79Pld_PhuUPldEcUn5rMkVK5E4OOAQV8H0sjJh47jr7D8wyzSGxXvWL1TYMRntKC&_nc_zt=23&_nc_ht=scontent.ftnm2-1.fna&_nc_gid=xwgYz6TGectUK-sv9AOaNQ&oh=00_AfP202smRTmYz2lSBZWFcQGHAnFPpZvAiu7A65RMXUXxeg&oe=6862237E"
+              alt=""
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="https://scontent.ftnm2-1.fna.fbcdn.net/v/t39.30808-6/480871383_122139231926428428_6895659775536706297_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=f727a1&_nc_ohc=4rc2irWYPy4Q7kNvwFf8hUD&_nc_oc=AdnTwAdk-KViRE3lv-Mf7fnt79Pld_PhuUPldEcUn5rMkVK5E4OOAQV8H0sjJh47jr7D8wyzSGxXvWL1TYMRntKC&_nc_zt=23&_nc_ht=scontent.ftnm2-1.fna&_nc_gid=xwgYz6TGectUK-sv9AOaNQ&oh=00_AfP202smRTmYz2lSBZWFcQGHAnFPpZvAiu7A65RMXUXxeg&oe=6862237E"
+              alt=""
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="https://scontent.ftnm2-1.fna.fbcdn.net/v/t39.30808-6/480871383_122139231926428428_6895659775536706297_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=f727a1&_nc_ohc=4rc2irWYPy4Q7kNvwFf8hUD&_nc_oc=AdnTwAdk-KViRE3lv-Mf7fnt79Pld_PhuUPldEcUn5rMkVK5E4OOAQV8H0sjJh47jr7D8wyzSGxXvWL1TYMRntKC&_nc_zt=23&_nc_ht=scontent.ftnm2-1.fna&_nc_gid=xwgYz6TGectUK-sv9AOaNQ&oh=00_AfP202smRTmYz2lSBZWFcQGHAnFPpZvAiu7A65RMXUXxeg&oe=6862237E"
+              alt=""
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="https://scontent.ftnm2-1.fna.fbcdn.net/v/t39.30808-6/480871383_122139231926428428_6895659775536706297_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=f727a1&_nc_ohc=4rc2irWYPy4Q7kNvwFf8hUD&_nc_oc=AdnTwAdk-KViRE3lv-Mf7fnt79Pld_PhuUPldEcUn5rMkVK5E4OOAQV8H0sjJh47jr7D8wyzSGxXvWL1TYMRntKC&_nc_zt=23&_nc_ht=scontent.ftnm2-1.fna&_nc_gid=xwgYz6TGectUK-sv9AOaNQ&oh=00_AfP202smRTmYz2lSBZWFcQGHAnFPpZvAiu7A65RMXUXxeg&oe=6862237E"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="swiper-button-next">
+          <!-- <span class="iconamoon--arrow-right-2-duotone"></span> -->
+        </div>
+        <div class="swiper-button-prev">
+          <!-- <span class="iconamoon--arrow-left-2-duotone"></span> -->
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <nav class="reina__nav">
+        <GoBack text="Volver a inicio" link="/" />
+        <GoBack text="Todas las reinas" link="/reinas" />
+      </nav>
+      <div class="user-card">
+        <div class="user-card__avatar">
+          <img src={`/reinas${imagenPrincipal}`} alt={nombreCompleto} />
         </div>
 
-        <h1 class="reina__title">{title}</h1>
-        <div class="reina__wrapper">
-            <div class="reina__info">
-                <p class="reina__info__barrio">{barrio}</p>
-                <p class="reina__info__edad">{edad} años</p>
-                <p class="reina__info__profesion">{profesion}</p>
-            </div>
+        <div class="user-card__info">
+          <h2 class="user-card__name">{nombreCompleto}</h2>
+          <p class="user-card__details">Barrio de {barrio}</p>
+          <p class="user-card__details">{edad} años • {profesion}</p>
         </div>
+      </div>
 
-        <div>
-            <Content />
-        </div>
+      <div class="reina__content">
+        <Content />
+      </div>
 
-        <nav class="headers__buttons">
-            <GoBack text="Volver a inicio" link="/" />
-            <GoBack text="Todas las reinas" link="/reinas" />
-        </nav>
-    </section>
+      <nav class="reina__nav">
+        <GoBack text="Volver a inicio" link="/" />
+        <GoBack text="Todas las reinas" link="/reinas" />
+      </nav>
+    </div>
+  </section>
 </Layout>
+<style>
+  .reina__nav {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .content_reina {
+    max-width: 1000px;
+    margin: auto;
+  }
+  .reina__image {
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-top: 1rem;
+  }
+  .reina__image_img {
+    object-position: center center;
+    width: 100%;
+    height: 100%;
+  }
+  .reina__info-item,
+  .reina__info-title {
+    margin: 0;
+    padding: 0;
+  }
+  .reina__info-title {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    text-wrap: balance;
+    color: purple;
+    line-height: 1;
+  }
+  .reina__info {
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .reina__info-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .reina__content {
+    margin-top: 2rem;
+  }
+  .user-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: fit-content;
+    margin: 0 auto;
+    margin-top: 2rem;
+    transition: all 0.3s ease;
+    user-select: none;
+    text-align: center;
+  }
+
+  .user-card__avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 2px solid var(--color-primary);
+  }
+
+  .user-card__avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .user-card__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .user-card__name {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: purple;
+    text-wrap: balance;
+    line-height: 1;
+  }
+
+  .user-card__details {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #555;
+  }
+  .user-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+  }
+  @media screen and (min-width: 768px) {
+    .user-card {
+      flex-direction: row;
+      text-align: left;
+    }
+  }
+
+  /* swiper js estilos */
+  .swiper {
+    width: 100%;
+    aspect-ratio: 16/9;
+  }
+  /* .swiper-button-next::after,
+  .swiper-button-prev::after {
+    content: "";
+  } */
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: var(--color-primary);
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+  }
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  :global(.swiper-pagination-progressbar) {
+    background: rgba(255, 255, 255, 0.3) !important;
+    height: 6px;
+  }
+
+  :global(.swiper-pagination-progressbar-fill) {
+    background: var(--color-primary) !important;
+  }
+  .iconamoon--arrow-left-2-duotone {
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m14 7l-5 5l5 5'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+  }
+  .iconamoon--arrow-right-2-duotone {
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m10 17l5-5l-5-5'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+  }
+
+  @media screen and (min-width: 1024px) {
+    /* .reina__wrapper {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+    .reina__image {
+      aspect-ratio: 9/16;
+      max-height: max-content;
+      object-fit: cover;
+    } */
+  }
+</style>
+<script>
+  import Swiper from "swiper";
+  import { Pagination, Navigation } from "swiper/modules";
+
+  const swiper = new Swiper(".mySwiper", {
+    modules: [Pagination, Navigation],
+    pagination: {
+      el: ".swiper-pagination",
+      type: "progressbar",
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>

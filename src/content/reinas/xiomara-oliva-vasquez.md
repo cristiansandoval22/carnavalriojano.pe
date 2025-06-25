@@ -1,9 +1,10 @@
 ---
-title: "Xiomara Oliva"
+nombreCorto: "Xiomara Oliva"
+nombreCompleto: "Xiomara Oliva Vásquez"
 barrio: "Shahuintopata"
 edad: 22
 profesion: "Estudiante de Derecho"
-imagenPrincipal: "Xiomara-Oliva-Vásquez.jpg"
+imagenPrincipal: "/shahuintopata/Xiomara-Oliva-Vásquez.jpg"
 galeria:
   - "foto1.jpg"
   - "foto2.jpg"

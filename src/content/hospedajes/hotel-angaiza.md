@@ -29,18 +29,18 @@ redesSociales:
 
 
 
-## 🛏️ Tarifas de habitaciones
+## Tarifas de habitaciones
 -  **Simple**: S/ 50  
 -  **Matrimonial**: S/ 70  
 -  **Doble**: S/ 100
 
-##  Servicios incluidos 
+## Servicios incluidos 
 -  Baño propio (agua fría y caliente las 24 horas)  
 -  Wifi de ultra velocidad (GRATIS)  
--  Cochera 24/7 🚗🏍️  
+-  Cochera 24/7   
 -  Smart TV con acceso a internet  
 -  Habitaciones completamente amobladas  
 -  Orientación turística  
 
-##  Restaurante
+## Restaurante
 - Contamos con desayunos, almuerzos y platos a la carta.

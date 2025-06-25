@@ -14,12 +14,12 @@ const reinas = await getCollection("reinas");
       {
         reinas.map((reina) => {
           const { slug, data } = reina;
-          const { title, edad, profesion, imagenPrincipal, barrio } = data;
+          const { nombreCorto, edad, profesion, imagenPrincipal, barrio } = data;
           return (
             <div class="swiper-slide">
               <ReinaCard
                 reinaImg={imagenPrincipal}
-                reinaName={title}
+                reinaName={nombreCorto}
                 reinaBarrio={barrio}
                 reinaEdad={edad}
                 reinaProfesion={profesion}
@@ -66,9 +66,11 @@ const reinas = await getCollection("reinas");
       640: {
         slidesPerView: 2,
         spaceBetween: 24,
+        centeredSlides: false,  
       },
       768: {
         slidesPerView: 3,
+        centeredSlides: false,
       },
       1024: {
         slidesPerView: 4,

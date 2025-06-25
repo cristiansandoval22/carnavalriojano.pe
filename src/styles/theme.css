@@ -63,10 +63,14 @@ body {
 .hero__image {
     overflow: hidden;
     user-select: none;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 .hero__image-img {
+    
     border-radius: 1rem;
+
 }
 
 
@@ -112,35 +116,14 @@ body {
     color: inherit;
 }
 
-.reina__wrapper {
-    display: flex;
-    gap: 1rem;
-    padding: 0.5rem;
-}
-
-.reina__image {
-    aspect-ratio: 16/9;
-    max-width: 600px;
-    overflow: hidden;
-    object-fit: cover;
-    border-radius: 1rem;
-    margin-top: 1rem;
-    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
-}
 
 .reina__title {
     color: purple;
 }
 
-.reina__info__barrio,
-.reina__info__edad,
-.reina__info__profesion {
-    margin: 0;
-    padding: 0;
-}
 
 .content {
-    max-width: 1000px;
+    max-width: 700px;
     margin: auto;
     margin-top: 2rem;
 }  
@@ -321,12 +304,7 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-    .hero {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        column-gap: 2rem;
-        padding-top: 8rem;
-    }
+    
 
     .hero__image-img {
         margin-left: auto;
@@ -354,11 +332,7 @@ body {
     }
 
 
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        justify-content: center;
-    }
+    
 
     .grid__reinas {
         grid-template-columns: repeat(2, 1fr);
@@ -391,11 +365,24 @@ body {
 }
 
 @media screen and (min-width: 1024px) {
+    .hero {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+        padding-top: 8rem;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+    }
     .contenido__grid {
        grid-template-columns: repeat(2, 1fr);
        margin-top: 2rem;
     }
-    .grid__days{
+    .grid__days,
+    .grid__hospedajes,
+    .grid__agencias{
         grid-template-columns: repeat(4, 1fr);
     }
 }
