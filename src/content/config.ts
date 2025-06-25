@@ -5,7 +5,8 @@ import { date } from "astro:schema";
 const reinas = defineCollection({
   schema: z.object({
     // 🏷️ Información general
-    title: z.string(),
+    nombreCorto: z.string(),
+    nombreCompleto:z.string(),
     barrio: z.string(),
     edad: z.number(),
     profesion: z.string(),
@@ -85,7 +86,8 @@ const sponsors = defineCollection({
   schema: z.object({
     name: z.string(),
     url: z.string().url(),
-    logo: z.string()
+    logo1: z.string(),
+    logo2: z.string()
   })
 });
 export const collections = { reinas, programacion, agencias, hospedajes, sponsors };

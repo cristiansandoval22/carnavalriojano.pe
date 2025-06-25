@@ -1,5 +1,4 @@
 ---
-// import "./reina-card.css";
 
 interface Props {
   reinaImg: string;
@@ -10,15 +9,14 @@ interface Props {
   slug: string;
 }
 
-const { reinaImg, reinaName, reinaBarrio, reinaEdad, reinaProfesion, slug } =
-  Astro.props;
+const { reinaImg, reinaName, reinaBarrio, slug } = Astro.props;
 ---
 
 <a href={`/reinas/${slug}`} class="reina__card__link">
   <article class="reina__card">
     <img
       class="reina__card__image"
-      src={`/reinas/${reinaImg}`}
+      src={`/reinas${reinaImg}`}
       alt={reinaName}
       loading="lazy"
     />

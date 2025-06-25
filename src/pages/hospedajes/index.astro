@@ -8,32 +8,24 @@ import { getCollection } from "astro:content";
 const hospedajes = await getCollection("hospedajes");
 ---
 
-<Layout title="Hospedajes del Carnaval Riojano 2025">
-    <section class="section container">
-        <div class="content">
-            <nav>
-                <GoBack text="Volver a inicio" link="/" />
-            </nav>
+<Layout title="Hospedajes del Carnaval Riojano 2026">
+  <section class="section container">
+    <nav>
+      <GoBack text="Volver a inicio" link="/" />
+    </nav>
 
-            <div class="grid__hospedajes">
-                {
-                hospedajes.map((hospedaje) => {
-                    const { slug, data } = hospedaje;
-                    const { title, direccion, imagen, tipo } = data;
+    <div class="grid__hospedajes">
+      {
+        hospedajes.map((hospedaje) => {
+          const { slug, data } = hospedaje;
+          const { title, direccion, imagen, tipo } = data;
 
-                    return (
-                        <HotelCard
-                            title={title}
-                            tipo = {tipo}
-                            imagen={imagen}
-                            slug={slug}
-                        />
-                    );
-                })
-            }
-            </div>
-            
-        </div>
-    </section>
-    <Sponsors />
+          return (
+            <HotelCard title={title} tipo={tipo} imagen={imagen} slug={slug} />
+          );
+        })
+      }
+    </div>
+  </section>
+  <Sponsors />
 </Layout>

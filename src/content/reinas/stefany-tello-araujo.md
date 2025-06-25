@@ -1,9 +1,10 @@
 ---
-title: "Stefany Tello"
+nombreCorto: "Stefany Tello"
+nombreCompleto: "Stefany Tello Araujo"
 barrio: "Nueva Rioja"
 edad: 22
 profesion: "Estudiante de Derecho"
-imagenPrincipal: "Stefany-Tello-Araujo.jpg"
+imagenPrincipal: "/nueva-rioja/Stefany-Tello-Araujo.jpg"
 galeria:
   - "foto1.jpg"
   - "foto2.jpg"
