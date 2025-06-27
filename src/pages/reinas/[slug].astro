@@ -16,96 +16,117 @@ export async function getStaticPaths() {
 }
 const { reina } = Astro.props;
 const { data } = reina;
-const { nombreCompleto, barrio, edad, profesion, imagenPrincipal } = data;
+const {
+  nombreCompleto,
+  barrio,
+  edad,
+  profesion,
+  imagenPrincipal,
+  redesSociales,
+} = data;
 
 const { Content } = await render(reina);
 ---
 
 <Layout title={nombreCompleto}>
+  <!-- Swiper -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img
+          src="https://scontent.ftnm2-1.fna.fbcdn.net/v/t39.30808-6/480871383_122139231926428428_6895659775536706297_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=f727a1&_nc_ohc=4rc2irWYPy4Q7kNvwFf8hUD&_nc_oc=AdnTwAdk-KViRE3lv-Mf7fnt79Pld_PhuUPldEcUn5rMkVK5E4OOAQV8H0sjJh47jr7D8wyzSGxXvWL1TYMRntKC&_nc_zt=23&_nc_ht=scontent.ftnm2-1.fna&_nc_gid=xwgYz6TGectUK-sv9AOaNQ&oh=00_AfP202smRTmYz2lSBZWFcQGHAnFPpZvAiu7A65RMXUXxeg&oe=6862237E"
+          alt={`Galería de la Reina del Carnaval 2026 en Rioja - ${nombreCompleto}`}
+        />
+      </div>
+      <div class="swiper-slide">
+        <img
+          src="https://scontent.ftnm2-1.fna.fbcdn.net/v/t39.30808-6/480871383_122139231926428428_6895659775536706297_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=f727a1&_nc_ohc=4rc2irWYPy4Q7kNvwFf8hUD&_nc_oc=AdnTwAdk-KViRE3lv-Mf7fnt79Pld_PhuUPldEcUn5rMkVK5E4OOAQV8H0sjJh47jr7D8wyzSGxXvWL1TYMRntKC&_nc_zt=23&_nc_ht=scontent.ftnm2-1.fna&_nc_gid=xwgYz6TGectUK-sv9AOaNQ&oh=00_AfP202smRTmYz2lSBZWFcQGHAnFPpZvAiu7A65RMXUXxeg&oe=6862237E"
+          alt={`Galería de la Reina del Carnaval 2026 en Rioja - ${nombreCompleto}`}
+        />
+      </div>
+      <div class="swiper-slide">
+        <img
+          src="https://scontent.ftnm2-1.fna.fbcdn.net/v/t39.30808-6/480871383_122139231926428428_6895659775536706297_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=f727a1&_nc_ohc=4rc2irWYPy4Q7kNvwFf8hUD&_nc_oc=AdnTwAdk-KViRE3lv-Mf7fnt79Pld_PhuUPldEcUn5rMkVK5E4OOAQV8H0sjJh47jr7D8wyzSGxXvWL1TYMRntKC&_nc_zt=23&_nc_ht=scontent.ftnm2-1.fna&_nc_gid=xwgYz6TGectUK-sv9AOaNQ&oh=00_AfP202smRTmYz2lSBZWFcQGHAnFPpZvAiu7A65RMXUXxeg&oe=6862237E"
+          alt={`Galería de la Reina del Carnaval 2026 en Rioja - ${nombreCompleto}`}
+        />
+      </div>
+    </div>
+    <div class="swiper-button-next">
+      <!-- <span class="iconamoon--arrow-right-2-duotone"></span> -->
+    </div>
+    <div class="swiper-button-prev">
+      <!-- <span class="iconamoon--arrow-left-2-duotone"></span> -->
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
   <section class="section container">
     <div class="content_reina">
-      
-      <!-- Swiper -->
-      <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img
-              src="https://scontent.ftnm2-1.fna.fbcdn.net/v/t39.30808-6/480871383_122139231926428428_6895659775536706297_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=f727a1&_nc_ohc=4rc2irWYPy4Q7kNvwFf8hUD&_nc_oc=AdnTwAdk-KViRE3lv-Mf7fnt79Pld_PhuUPldEcUn5rMkVK5E4OOAQV8H0sjJh47jr7D8wyzSGxXvWL1TYMRntKC&_nc_zt=23&_nc_ht=scontent.ftnm2-1.fna&_nc_gid=xwgYz6TGectUK-sv9AOaNQ&oh=00_AfP202smRTmYz2lSBZWFcQGHAnFPpZvAiu7A65RMXUXxeg&oe=6862237E"
-              alt=""
-            />
-          </div>
-          <div class="swiper-slide">
-            <img
-              src="https://scontent.ftnm2-1.fna.fbcdn.net/v/t39.30808-6/480871383_122139231926428428_6895659775536706297_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=f727a1&_nc_ohc=4rc2irWYPy4Q7kNvwFf8hUD&_nc_oc=AdnTwAdk-KViRE3lv-Mf7fnt79Pld_PhuUPldEcUn5rMkVK5E4OOAQV8H0sjJh47jr7D8wyzSGxXvWL1TYMRntKC&_nc_zt=23&_nc_ht=scontent.ftnm2-1.fna&_nc_gid=xwgYz6TGectUK-sv9AOaNQ&oh=00_AfP202smRTmYz2lSBZWFcQGHAnFPpZvAiu7A65RMXUXxeg&oe=6862237E"
-              alt=""
-            />
-          </div>
-          <div class="swiper-slide">
-            <img
-              src="https://scontent.ftnm2-1.fna.fbcdn.net/v/t39.30808-6/480871383_122139231926428428_6895659775536706297_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=f727a1&_nc_ohc=4rc2irWYPy4Q7kNvwFf8hUD&_nc_oc=AdnTwAdk-KViRE3lv-Mf7fnt79Pld_PhuUPldEcUn5rMkVK5E4OOAQV8H0sjJh47jr7D8wyzSGxXvWL1TYMRntKC&_nc_zt=23&_nc_ht=scontent.ftnm2-1.fna&_nc_gid=xwgYz6TGectUK-sv9AOaNQ&oh=00_AfP202smRTmYz2lSBZWFcQGHAnFPpZvAiu7A65RMXUXxeg&oe=6862237E"
-              alt=""
-            />
-          </div>
-          <div class="swiper-slide">
-            <img
-              src="https://scontent.ftnm2-1.fna.fbcdn.net/v/t39.30808-6/480871383_122139231926428428_6895659775536706297_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=f727a1&_nc_ohc=4rc2irWYPy4Q7kNvwFf8hUD&_nc_oc=AdnTwAdk-KViRE3lv-Mf7fnt79Pld_PhuUPldEcUn5rMkVK5E4OOAQV8H0sjJh47jr7D8wyzSGxXvWL1TYMRntKC&_nc_zt=23&_nc_ht=scontent.ftnm2-1.fna&_nc_gid=xwgYz6TGectUK-sv9AOaNQ&oh=00_AfP202smRTmYz2lSBZWFcQGHAnFPpZvAiu7A65RMXUXxeg&oe=6862237E"
-              alt=""
-            />
-          </div>
-          <div class="swiper-slide">
-            <img
-              src="https://scontent.ftnm2-1.fna.fbcdn.net/v/t39.30808-6/480871383_122139231926428428_6895659775536706297_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=f727a1&_nc_ohc=4rc2irWYPy4Q7kNvwFf8hUD&_nc_oc=AdnTwAdk-KViRE3lv-Mf7fnt79Pld_PhuUPldEcUn5rMkVK5E4OOAQV8H0sjJh47jr7D8wyzSGxXvWL1TYMRntKC&_nc_zt=23&_nc_ht=scontent.ftnm2-1.fna&_nc_gid=xwgYz6TGectUK-sv9AOaNQ&oh=00_AfP202smRTmYz2lSBZWFcQGHAnFPpZvAiu7A65RMXUXxeg&oe=6862237E"
-              alt=""
-            />
-          </div>
-          <div class="swiper-slide">
-            <img
-              src="https://scontent.ftnm2-1.fna.fbcdn.net/v/t39.30808-6/480871383_122139231926428428_6895659775536706297_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=f727a1&_nc_ohc=4rc2irWYPy4Q7kNvwFf8hUD&_nc_oc=AdnTwAdk-KViRE3lv-Mf7fnt79Pld_PhuUPldEcUn5rMkVK5E4OOAQV8H0sjJh47jr7D8wyzSGxXvWL1TYMRntKC&_nc_zt=23&_nc_ht=scontent.ftnm2-1.fna&_nc_gid=xwgYz6TGectUK-sv9AOaNQ&oh=00_AfP202smRTmYz2lSBZWFcQGHAnFPpZvAiu7A65RMXUXxeg&oe=6862237E"
-              alt=""
-            />
-          </div>
-          <div class="swiper-slide">
-            <img
-              src="https://scontent.ftnm2-1.fna.fbcdn.net/v/t39.30808-6/480871383_122139231926428428_6895659775536706297_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=f727a1&_nc_ohc=4rc2irWYPy4Q7kNvwFf8hUD&_nc_oc=AdnTwAdk-KViRE3lv-Mf7fnt79Pld_PhuUPldEcUn5rMkVK5E4OOAQV8H0sjJh47jr7D8wyzSGxXvWL1TYMRntKC&_nc_zt=23&_nc_ht=scontent.ftnm2-1.fna&_nc_gid=xwgYz6TGectUK-sv9AOaNQ&oh=00_AfP202smRTmYz2lSBZWFcQGHAnFPpZvAiu7A65RMXUXxeg&oe=6862237E"
-              alt=""
-            />
-          </div>
-          <div class="swiper-slide">
-            <img
-              src="https://scontent.ftnm2-1.fna.fbcdn.net/v/t39.30808-6/480871383_122139231926428428_6895659775536706297_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=f727a1&_nc_ohc=4rc2irWYPy4Q7kNvwFf8hUD&_nc_oc=AdnTwAdk-KViRE3lv-Mf7fnt79Pld_PhuUPldEcUn5rMkVK5E4OOAQV8H0sjJh47jr7D8wyzSGxXvWL1TYMRntKC&_nc_zt=23&_nc_ht=scontent.ftnm2-1.fna&_nc_gid=xwgYz6TGectUK-sv9AOaNQ&oh=00_AfP202smRTmYz2lSBZWFcQGHAnFPpZvAiu7A65RMXUXxeg&oe=6862237E"
-              alt=""
-            />
-          </div>
-          <div class="swiper-slide">
-            <img
-              src="https://scontent.ftnm2-1.fna.fbcdn.net/v/t39.30808-6/480871383_122139231926428428_6895659775536706297_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=f727a1&_nc_ohc=4rc2irWYPy4Q7kNvwFf8hUD&_nc_oc=AdnTwAdk-KViRE3lv-Mf7fnt79Pld_PhuUPldEcUn5rMkVK5E4OOAQV8H0sjJh47jr7D8wyzSGxXvWL1TYMRntKC&_nc_zt=23&_nc_ht=scontent.ftnm2-1.fna&_nc_gid=xwgYz6TGectUK-sv9AOaNQ&oh=00_AfP202smRTmYz2lSBZWFcQGHAnFPpZvAiu7A65RMXUXxeg&oe=6862237E"
-              alt=""
-            />
-          </div>
-        </div>
-        <div class="swiper-button-next">
-          <!-- <span class="iconamoon--arrow-right-2-duotone"></span> -->
-        </div>
-        <div class="swiper-button-prev">
-          <!-- <span class="iconamoon--arrow-left-2-duotone"></span> -->
-        </div>
-        <div class="swiper-pagination"></div>
-      </div>
       <nav class="reina__nav">
         <GoBack text="Volver a inicio" link="/" />
         <GoBack text="Todas las reinas" link="/reinas" />
       </nav>
-      <div class="user-card">
-        <div class="user-card__avatar">
-          <img src={`/reinas${imagenPrincipal}`} alt={nombreCompleto} />
+
+      <header class="reina__header">
+        <div class="user-card">
+          <div class="user-card__avatar">
+            <img
+              src={`/reinas${imagenPrincipal}`}
+              alt={`foto de ${nombreCompleto}`}
+            />
+          </div>
+
+          <div class="user-card__info">
+            <h2 class="user-card__name">{nombreCompleto}</h2>
+            <p class="user-card__details">Barrio de {barrio}</p>
+            <p class="user-card__details">{edad} años • {profesion}</p>
+          </div>
         </div>
 
-        <div class="user-card__info">
-          <h2 class="user-card__name">{nombreCompleto}</h2>
-          <p class="user-card__details">Barrio de {barrio}</p>
-          <p class="user-card__details">{edad} años • {profesion}</p>
-        </div>
-      </div>
+        <ul class="wrapper">
+          {
+            redesSociales?.facebook && (
+              <li>
+                <a
+                  class="icon facebook"
+                  href={redesSociales.facebook}
+                  target="_blank"
+                >
+                  <span class="tooltip">Facebook</span>
+                  <span class="ic--baseline-facebook" />
+                </a>
+              </li>
+            )
+          }
+          {
+            redesSociales?.instagram && (
+              <li>
+                <a
+                  class="icon instagram"
+                  href={redesSociales.instagram}
+                  target="_blank"
+                >
+                  <span class="tooltip">Instagram</span>
+                  <span class="mdi--instagram" />
+                </a>
+              </li>
+            )
+          }
+          {
+            redesSociales?.tiktok && (
+              <li>
+                <a
+                  class="icon tiktok"
+                  href={redesSociales.tiktok}
+                  target="_blank"
+                >
+                  <span class="tooltip">TikTok</span>
+                  <span class="ic--baseline-tiktok" />
+                </a>
+              </li>
+            )
+          }
+        </ul>
+      </header>
 
       <div class="reina__content">
         <Content />
@@ -119,10 +140,15 @@ const { Content } = await render(reina);
   </section>
 </Layout>
 <style>
+  .reina__header {
+    display: flex;
+    column-gap: 1rem;
+    padding-top: 2rem;
+    flex-wrap: wrap;
+  }
   .reina__nav {
     display: flex;
     gap: 1rem;
-    margin-top: 1rem;
   }
   .content_reina {
     max-width: 1000px;
@@ -168,13 +194,11 @@ const { Content } = await render(reina);
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    padding: 1rem;
+    padding: 0.5rem;
     border-radius: 12px;
     background-color: #ffffff;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     max-width: fit-content;
-    margin: 0 auto;
-    margin-top: 2rem;
     transition: all 0.3s ease;
     user-select: none;
     text-align: center;
@@ -219,6 +243,99 @@ const { Content } = await render(reina);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     transform: translateY(-5px);
   }
+
+  .wrapper {
+    display: inline-flex;
+    list-style: none;
+    font-family: "Poppins", sans-serif;
+    justify-content: center;
+    padding-left: 0;
+  }
+
+  .wrapper .icon {
+    position: relative;
+    background: #fff;
+    border-radius: 50%;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    color: var(--color-text-p);
+  }
+
+  .wrapper .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #fff;
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .wrapper .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #fff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .wrapper .icon:hover span,
+  .wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  .wrapper .facebook:hover,
+  .wrapper .facebook:hover .tooltip,
+  .wrapper .facebook:hover .tooltip::before {
+    background-color: #1877f2;
+    color: #fff;
+  }
+
+  .wrapper .instagram:hover,
+  .wrapper .instagram:hover .tooltip,
+  .wrapper .instagram:hover .tooltip::before {
+    background: linear-gradient(
+      45deg,
+      #f09433 0%,
+      #e6683c 25%,
+      #dc2743 50%,
+      #cc2366 75%,
+      #bc1888 100%
+    );
+    color: #fff;
+  }
+
+  .wrapper .tiktok:hover,
+  .wrapper .tiktok:hover .tooltip,
+  .wrapper .tiktok:hover .tooltip::before {
+    background: crimson;
+    color: #fff;
+  }
+
   @media screen and (min-width: 768px) {
     .user-card {
       flex-direction: row;
@@ -266,32 +383,6 @@ const { Content } = await render(reina);
   :global(.swiper-pagination-progressbar-fill) {
     background: var(--color-primary) !important;
   }
-  .iconamoon--arrow-left-2-duotone {
-    display: inline-block;
-    width: 3rem;
-    height: 3rem;
-    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m14 7l-5 5l5 5'/%3E%3C/svg%3E");
-    background-color: currentColor;
-    -webkit-mask-image: var(--svg);
-    mask-image: var(--svg);
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-size: 100% 100%;
-    mask-size: 100% 100%;
-  }
-  .iconamoon--arrow-right-2-duotone {
-    display: inline-block;
-    width: 3rem;
-    height: 3rem;
-    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m10 17l5-5l-5-5'/%3E%3C/svg%3E");
-    background-color: currentColor;
-    -webkit-mask-image: var(--svg);
-    mask-image: var(--svg);
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-size: 100% 100%;
-    mask-size: 100% 100%;
-  }
 
   @media screen and (min-width: 1024px) {
     /* .reina__wrapper {
@@ -319,5 +410,6 @@ const { Content } = await render(reina);
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
+    // loop: true,
   });
 </script>

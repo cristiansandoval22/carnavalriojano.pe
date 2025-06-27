@@ -6,136 +6,282 @@ import ReinaCarousel from "../components/reinas/Reinas-carousel/ReinasCarousel.a
 import GoBack from "../components/goBack/goBack.astro";
 import Sponsors from "../components/sponsors/sponsors.astro";
 import Carousel from "../components/carousel/carousel.astro";
-import AgencyCard from "../components/agencia/agencyCard/AgencyCard.astro";
-import ScheduleCard from "../components/programacion/DayScheduleCard/DayScheduleCard.astro";
-const reinas = await getCollection("reinas");
-const agencias = await getCollection("agencias");
-const hospedajes = await getCollection("hospedajes");
-const programacion = await getCollection("programacion");
-
 ---
 
 <Layout title="Carnaval Riojano 2026 – Cultura y tradición">
-    <!-- hero section -->
-    <section class="hero section container">
-        <div class="hero__content">
-            <h1 class="section__title">
-                ¡Ven a celebrar el Carnaval Riojano 2026!
-            </h1>
+  <!-- hero section -->
+  <section class="hero section container">
+    <div class="hero__content">
+      <h1 class="section__title">¡Ven a celebrar el Carnaval Riojano 2026!</h1>
 
-            <p class="hero__subtitle">
-                <strong>Pre Carnaval:</strong> Del 05 de enero al 17 de febrero
-                <br>
-                <strong>Centrales</strong> Del 17 al 23 de febrero
-            </p>
-           <div class="hero__buttons">
-             <a href="/programacion" class="hero__button">
-                <span class="akar-icons--calendar"></span>
-                Ver programación
-            </a>
+      <p class="hero__subtitle">
+        <strong>Pre Carnaval:</strong> Del 05 de enero al 17 de febrero
+        <br />
+        <strong>Centrales</strong> Del 17 al 23 de febrero
+      </p>
+      <div class="hero__buttons">
+        <a href="/programacion" class="hero__button">
+          <span class="akar-icons--calendar"></span>
+          Ver programación
+        </a>
 
-            <a 
-            target="_blank"
-            href="https://www.google.com/maps/dir//Rioja/@-6.0610539,-77.2078383,13z/data=!4m8!4m7!1m0!1m5!1m1!1s0x91b727bf4cf0ec33:0x637b94ce3004ed3d!2m2!1d-77.1657716!2d-6.0570484?entry=ttu&g_ep=EgoyMDI1MDExMC4wIKXMDSoASAFQAw%3D%3D" class="hero__button">
-                <span class="mdi--location"></span>
-                Como llegar
-            </a>
-           </div>
-        </div>
+        <a
+          target="_blank"
+          href="https://www.google.com/maps/dir//Rioja/@-6.0610539,-77.2078383,13z/data=!4m8!4m7!1m0!1m5!1m1!1s0x91b727bf4cf0ec33:0x637b94ce3004ed3d!2m2!1d-77.1657716!2d-6.0570484?entry=ttu&g_ep=EgoyMDI1MDExMC4wIKXMDSoASAFQAw%3D%3D"
+          class="hero__button"
+        >
+          <span class="mdi--location"></span>
+          Como llegar
+        </a>
+      </div>
+    </div>
 
-        <div class="hero__image">
-            <img
-                class="hero__image-img"
-                src="/hero-img.jpg"
-                alt="Carnaval Riojano 2025"
-                loading="lazy"
-            />
-        </div>
-    </section>
+    <div class="hero__image">
+      <img
+        class="hero__image-img"
+        src="/hero-img.jpg"
+        alt="Carnaval Riojano 2025"
+        loading="lazy"
+      />
+    </div>
+  </section>
 
-    <!-- partner carousel -->
-    <PartnerCarousel />
+  <!-- partner carousel -->
+  <PartnerCarousel />
 
-    <!-- about section -->
-    <section class="about section container">
-        <div class="about__container">
-            <div class="about__content">
-                <h2 class="section__title about__title">
-                    Sobre el Carnaval Riojano
-                </h2>
-                <p class="about__subtitle">
-                    Una tradición centenaria que celebra la cultura, música y
-                    alegría del pueblo riojano
-                </p>
-            </div>
-
-            <div class="grid">
-                <div class="about__info">
-                    <h3>
-                        Desde hace décadas, las calles de Rioja se llenan de
-                        música, danza y alegría.
-                    </h3>
-
-                    <p>
-                        El Carnaval Riojano es una celebración que une música,
-                        danza y cultura en un evento inolvidable. Desde las
-                        vibrantes pandillas hasta las emocionantes umshas, esta
-                        tradición ha conquistado corazones por generaciones.
-                    </p>
-
-                    <a href="/sobre-el-carnaval" class="about__button">
-                        leer más
-                        <span class="mingcute--arrow-right-fill"></span>
-                    </a>
-                </div>
-
-                <div class="about__images">
-                    <img
-                        class="about__image"
-                        src="/diablos-de-rioja-foto.jpg"
-                        alt="diblos de rioja en la plaza de armas"
-                        loading="lazy"
-                    />
-                    <img
-                        class="about__image"
-                        src="/plaza-de-armas-presentacion.jpg"
-                        alt="presentacion de los Diblos en la plaza de armas"
-                        loading="lazy"
-                        loading="lazy"
-                    />
-                    <img
-                        class="about__image"
-                        src="/reinas-prof-ronald.jpg"
-                        alt="reinas del carnaval riojano junto al ño carnavalon de ronald sandoval 2025 "
-                        loading="lazy"
-                        loading="lazy"
-                    />
-                    <img
-                        class="about__image"
-                        src="/turista-y-diablo.jpg"
-                        alt="Turísta disfrutando del carnaval riojano junto a un diblo de rioja"
-                        loading="lazy"
-                    />
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- reina section -->
-    <section class="reinas section container">
-        <h2 class="section__title reina__title">
-            Candidatas a Reina del Carnaval Riojano 2026
-        </h2>
-        <p class="reina__subtitle">
-            Mujeres que representan la belleza, cultura y tradición de nuestros
-            barrios. Conócelas y acompáñalas en esta maravillosa experiencia.
+  <!-- about section -->
+  <section class="about section container">
+    <div class="about__container">
+      <div class="about__content">
+        <h2 class="section__title about__title">Sobre el Carnaval Riojano</h2>
+        <p class="about__subtitle">
+          Una tradición centenaria que celebra la cultura, música y alegría del
+          pueblo riojano
         </p>
-        <ReinaCarousel />
-        <div class="btn-wrapper">
-            <GoBack text="Ver todas las reinas" link="/reinas" />
-        </div>
-    </section>
+      </div>
 
-    <!-- sponsors section -->
-    <Sponsors />
+      <div class="grid">
+        <div class="about__info">
+          <h3>
+            Desde hace décadas, las calles de Rioja se llenan de música, danza y
+            alegría.
+          </h3>
+
+          <p>
+            El Carnaval Riojano es una celebración que une música, danza y
+            cultura en un evento inolvidable. Desde las vibrantes pandillas
+            hasta las emocionantes umshas, esta tradición ha conquistado
+            corazones por generaciones.
+          </p>
+
+          <a href="/sobre-el-carnaval" class="about__button">
+            leer más
+            <span class="mingcute--arrow-right-fill"></span>
+          </a>
+        </div>
+
+        <div class="about__images">
+          <img
+            class="about__image"
+            src="/diablos-de-rioja-foto.jpg"
+            alt="diblos de rioja en la plaza de armas"
+            loading="lazy"
+          />
+          <img
+            class="about__image"
+            src="/plaza-de-armas-presentacion.jpg"
+            alt="presentacion de los Diblos en la plaza de armas"
+            loading="lazy"
+            loading="lazy"
+          />
+          <img
+            class="about__image"
+            src="/reinas-prof-ronald.jpg"
+            alt="reinas del carnaval riojano junto al ño carnavalon de ronald sandoval 2025 "
+            loading="lazy"
+            loading="lazy"
+          />
+          <img
+            class="about__image"
+            src="/turista-y-diablo.jpg"
+            alt="Turísta disfrutando del carnaval riojano junto a un diblo de rioja"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- reina section -->
+  <section class="reinas section container">
+    <h2 class="section__title reina__title">
+      Candidatas a Reina del Carnaval Riojano 2026
+    </h2>
+    <p class="reina__subtitle">
+      Mujeres que representan la belleza, cultura y tradición de nuestros
+      barrios. Conócelas y acompáñalas en esta maravillosa experiencia.
+    </p>
+    <ReinaCarousel />
+    <div class="btn-wrapper">
+      <GoBack text="Ver todas las reinas" link="/reinas" />
+    </div>
+  </section>
+  <!-- agencias section -->
+  <section class="agencies-section">
+    <div class="agencies-section__container section container">
+      <div class="agencies-section__content">
+        <h2 class="agencies-section__title">
+          Encuentra la agencia perfecta para tu experiencia en el Carnaval
+          Riojano 2026.
+        </h2>
+        <p class="agencies-section__description">
+          ¿Listo para vivir la magia del Carnaval Riojano 2026 en Rioja, San
+          Martín? Sabemos que planificar tu viaje puede ser abrumador, por eso
+          hemos reunido las mejores agencias de turismo locales y
+          especializadas.
+        </p>
+        <a class="agencies-section__button" href="/agencias" role="button">
+          Ver todas las agencias
+        </a>
+      </div>
+      <div class="agencies-section__image-wrapper">
+        <img
+          src="/carnaval-riojano-2026-agencias-viajes.webp"
+          alt="Mapa o representación visual que sugiere agencias de viaje para el Carnaval Riojano 2026"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- hospedaje section -->
+  <section class="lodging-section">
+    <div class="lodging-section__container section container">
+      <div class="lodging-section__content">
+        <h2 class="lodging-section__title">
+          Encuentra el hospedaje ideal para tu experiencia en el Carnaval
+          Riojano 2026.
+        </h2>
+        <p class="lodging-section__description">
+          ¿Planeando tu visita al vibrante Carnaval Riojano 2026 en Rioja, San
+          Martín? Sabemos que encontrar el lugar perfecto para descansar es
+          clave. Por eso, hemos seleccionado los mejores hoteles, hostales y
+          alojamientos para que tu experiencia sea inolvidable.
+        </p>
+        <a class="lodging-section__button" href="/hospedajes" role="button">
+          Ver todos los hospedajes
+        </a>
+      </div>
+      <div class="lodging-section__image-wrapper">
+        <img
+          src="/carnaval-riojano-2026-hospedajes-rioja.webp"
+          alt="Representación visual de un hotel o alojamiento acogedor en Rioja para el Carnaval 2026"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+  <!-- sponsors section -->
+  <Sponsors />
 </Layout>
+
+<style>
+  .agencies-section__container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  /* Elemento: Contenido (texto + botón) */
+  .agencies-section__content {
+    flex: 1;
+  }
+
+  /* Elemento: Imagen */
+  .agencies-section__image-wrapper {
+    flex: 1;
+  }
+
+  .agencies-section__image-wrapper img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  }
+  .agencies-section__title {
+    color: #3190a9;
+  }
+  /* Elemento: Descripción */
+  .agencies-section__description {
+    margin-bottom: 1.5rem;
+  }
+  .agencies-section__button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #42a7c3;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+
+  .agencies-section__button:hover {
+    background-color: #3190a9;
+  }
+
+  .lodging-section__container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  /* Elemento: Contenido (texto + botón) */
+  .lodging-section__content {
+    flex: 1;
+  }
+
+  /* Elemento: Imagen */
+  .lodging-section__image-wrapper {
+    flex: 1;
+  }
+  .lodging-section__image-wrapper img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  }
+  .lodging-section__title {
+    color: purple;
+  }
+  .lodging-section__button{
+    display: inline-flex;
+    background-color: purple;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+  .lodging-section__button:hover {
+    background-color: rgb(105, 1, 105);
+  }
+
+  @media (min-width: 1024px) {
+    .agencies-section__container {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: 2rem 0;
+    }
+
+    .lodging-section__container {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: 2rem 0;
+    }
+  }
+</style>
