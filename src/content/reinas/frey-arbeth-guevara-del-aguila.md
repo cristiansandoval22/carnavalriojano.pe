@@ -9,9 +9,10 @@ galeria:
   - "foto1.jpg"
   - "foto2.jpg"
   - "foto3.jpg"
-mensaje: "Representar a mi barrio es un orgullo inmenso."
-anio: 2026
-fechaPublicacion: "2025-06-13"
+redesSociales: 
+  facebook: "https://www.facebook.com/"
+  instagram: "https://www.instagram.com/"
+  tiktok: "https://www.tiktok.com/"
 ---
 
 

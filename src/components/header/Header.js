@@ -1,6 +1,7 @@
 const navMenu = document.getElementById("nav-menu");
 const navToggle = document.getElementById("nav-toggle");
 const navClose = document.getElementById("nav-close");
+const header = document.getElementById("header");
 
 navToggle.addEventListener("click", () => {
     navMenu.classList.add("show__menu");
@@ -32,3 +33,13 @@ const blurHeader = () => {
         : header.classList.remove("blur-header");
 };
 window.addEventListener("scroll", blurHeader);
+
+const stickyHeader = () => {
+    if (window.scrollY > 50) {
+        header.classList.add("sticky");
+    } else {
+        header.classList.remove("sticky");
+    }
+};
+
+window.addEventListener("scroll", stickyHeader);

@@ -10,17 +10,18 @@ const reinas = defineCollection({
     barrio: z.string(),
     edad: z.number(),
     profesion: z.string(),
-    anio: z.number(),
 
     // 🖼️ Imágenes
     imagenPrincipal: z.string(),
     galeria: z.array(z.string()),
 
-    // 💬 Mensaje y contenido
-    mensaje: z.string(),
+    // 📲 Redes sociales
+    redesSociales: z.object({
+      facebook: z.string().url().optional(),
+      instagram: z.string().url().optional(),
+      tiktok: z.string().url().optional(),
+    }).optional(),
 
-    // 📅 Metadatos
-    fechaPublicacion: z.string(),
   }),
 });
 

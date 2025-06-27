@@ -14,14 +14,10 @@ body {
     color: var(--color-text-p);
 }
 
-/* .hero {
-        background-image:
-            linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-            url('/public/diablos-de-rioja-foto.jpg');
-        background-size: cover;
-        background-position: center;
-        height: 100dvh;
-    } */
+.hero {
+    padding-top: 0;
+
+    } 
 
 .section__title {
     color: purple;
@@ -125,7 +121,6 @@ body {
 .content {
     max-width: 700px;
     margin: auto;
-    margin-top: 2rem;
 }  
 
 .image {
@@ -322,8 +317,6 @@ body {
     .about__title-single,
     .programacion__title,
     .programacion__subtitle,
-    .agencias__title,
-    .agencias__subtitle,
     .hospedajes__title,
     .hospedajes__subtitle,
     .galeria__title,
@@ -369,7 +362,6 @@ body {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         column-gap: 2rem;
-        padding-top: 8rem;
     }
     .grid {
         display: grid;
