@@ -5,14 +5,16 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import ReinaCard from "../reina-card/ReinaCard.astro";
 
+
 const reinas = await getCollection("reinas");
+
 ---
 
 <section class="slide__reinas container">
   <div class="swiper">
     <div class="swiper-wrapper">
       {
-        reinas.map((reina) => {
+        reinas.map((reina: typeof reinas[number]) => {
           const { slug, data } = reina;
           const { nombreCorto, edad, profesion, imagenPrincipal, barrio } = data;
           return (
@@ -82,7 +84,6 @@ const reinas = await getCollection("reinas");
 </script>
 
 <style>
-  .
   .slide__reinas {
     margin: 0 auto;
   }
